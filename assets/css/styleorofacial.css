@@ -86,17 +86,8 @@
       flex-direction: column;
     }
 
-    .servicos .cards {
-      flex-direction: column;
-      align-items: center;
-    }
-
     .hero-content h2 {
       font-size: 2em;
-    }
-
-    .servicos .card {
-      max-width: 90%;
     }
   }
 
@@ -109,12 +100,6 @@
       font-size: 1.5em;
     }
 
-    .servicos h2,
-    .sobre-nos h2,
-    .depoimentos h2,
-    .contato h2 {
-      font-size: 2em;
-    }
   }
 
   /* Formulário */
