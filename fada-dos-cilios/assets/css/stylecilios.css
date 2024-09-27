@@ -1,0 +1,233 @@
+:root {
+    --bordeaux: #800020;
+    --marfim: #FFFFF0;
+    --branco: #FFFFFF;
+    --dourado-suave: #FFD700;
+    --roxo-pastel: #D1C4E9;
+    --preto: #1C1C1C;
+    --cinza-claro:#ECECEC;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--branco);
+    color: var(--preto);
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: var(--bordeaux);
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header h1 {
+    color: var(--branco);
+    font-size: 2em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    color: var(--dourado-suave);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--bordeaux);
+    color: var(--branco);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  footer p {
+    margin-bottom: 10px;
+  }
+
+  footer .social-links a {
+    color: var(--branco);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+  }
+
+  footer .social-links a:hover {
+    color: var(--dourado-suave);
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+
+
+    .hero-content h2 {
+      font-size: 2em;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      height: 40vh;
+    }
+
+    .hero-content h2 {
+      font-size: 1.5em;
+    }
+
+  }
+
+  /* Formulário */
+  .form-container {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .form-container h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: var(--preto);
+    text-align: center;
+  }
+
+  .form-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--cinza-claro);
+    border-radius: 10px;
+  }
+
+  .form-section h3 {
+    margin-bottom: 20px;
+    color: var(--bordeaux);
+    font-size: 1.8em;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="date"],
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .form-group input[type="radio"],
+  .form-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  .checkbox-group,
+  .radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-group label,
+  .radio-group label {
+    margin-right: 20px;
+    font-weight: normal;
+  }
+
+  .form-group .checkbox-group label input,
+  .form-group .radio-group label input {
+    margin-right: 5px;
+  }
+
+  .submit-btn {
+    background-color: var(--bordeaux);
+    color: var(--branco);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .submit-btn:hover {
+    background-color: var(--dourado-suave);
+  }
+
+  /* Hero Section */
+ .hero {
+  background-image: url('/assets/images/cilios.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 187, 208, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--branco);
+}
+
+.hero-content h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
