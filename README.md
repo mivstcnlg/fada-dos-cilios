@@ -9,6 +9,7 @@ Este projeto é um website fictício desenvolvido para N1 da disciplina Desenvol
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Integrantes do Grupo](#integrantes-grupo)
 
 ## Descrição
 
@@ -44,7 +45,7 @@ Para rodar o projeto localmente, siga as instruções abaixo:
 ### Página Inicial (Home)
 A página inicial apresenta a **Fada dos Cílios** com informações básicas sobre procedimentos estéticos e contato.
 
-### Página de Extensão de Cílios, Harmonização Orofacial e Hidrolipoclasia Não Aspirativa 
+### Páginas de Extensão de Cílios, Harmonização Orofacial e Hidrolipoclasia Não Aspirativa 
 As páginas de formulário podem ser acessadas via o menu de navegação e permite ao paciente preencher e submeter suas informações para o início do tratamento estético.
 
 ### Exemplo de uso do formulário:
@@ -59,3 +60,8 @@ As páginas de formulário podem ser acessadas via o menu de navegação e permi
 - **HTML5**: Marcações semânticas.
 - **CSS3**: Estilização da página, com variáveis CSS e Flexbox.
 - **Responsividade**: Adaptado para diferentes tamanhos de dispositivos, com Media Queries.
+
+## Integrantes do Grupo
+- **Emelly Sales** - 2050671
+- **Lucas Mota** - 1898181
+- **Wallace Oliveira** - 2031549
