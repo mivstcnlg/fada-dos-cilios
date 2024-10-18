@@ -31,7 +31,7 @@ Para rodar o projeto localmente, siga as instruções abaixo:
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/fada-dos-cilios.git
+    git clone https://github.com/mivstcnlg/fada-dos-cilios.git
     ```
 2. Navegue até o diretório do projeto:
     ```bash
