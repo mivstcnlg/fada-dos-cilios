@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anamnese Extensão de Cílios - Fada dos Cílios</title>
-    <link rel="stylesheet" href="assets/css/stylecilios.css">
+    <link rel="stylesheet" href="../css/stylecilios.css">
 
 </head>
 
@@ -89,7 +89,6 @@
                     <input type="text" id="indicado-por" name="indicado_por">
                 </div>
             </div>
-
 
             <!-- 2ª Seção -->
             <div class="form-section">
@@ -177,8 +176,6 @@
                 </div>
             </div>
 
-
-
             <!-- 3ª Seção -->
             <div class="form-section">
                 <h3>Ficha Técnica:</h3>
@@ -190,50 +187,52 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="ficha-mapping">Mapping:</label>
+                    <label for="mapping">Mapping:</label>
                     <input type="text" id="mapping" name="mapping" required>
                 </div>
                 <div class="form-group">
-                    <label for="ficha-estilo">Estilo:</label>
+                    <label for="estilo">Estilo:</label>
                     <input type="text" id="estilo" name="estilo" required>
                 </div>
                 <div class="form-group">
-                    <label for="ficha-modelo">Modelo de Fios:</label>
+                    <label for="modelo">Modelo de Fios:</label>
                     <input type="text" id="modelo" name="modelo" required>
                 </div>
                 <div class="form-group">
-                    <label for="ficha-espessura">Espessura:</label>
+                    <label for="espessura">Espessura:</label>
                     <input type="text" id="espessura" name="espessura" required>
                 </div>
                 <div class="form-group">
-                    <label for="ficha-curvatura">Curvatura:</label>
+                    <label for="curvatura">Curvatura:</label>
                     <input type="text" id="curvatura" name="curvatura" required>
                 </div>
                 <div class="form-group">
-                    <label for="ficha-adesivo">Adesivo:</label>
+                    <label for="adesivo">Adesivo:</label>
                     <input type="text" id="adesivo" name="adesivo" required>
                 </div>
 
                 <h3>Lifting:</h3>
                 <div class="form-group">
-                    <label for="lifting-marca">Marca:</label>
+                    <label for="marca">Marca:</label>
                     <input type="text" id="marca" name="marca" required>
                 </div>
                 <div class="form-group">
-                    <label for="lifting-moldes">Pads/Moldes:</label>
+                    <label for="moldes">Pads/Moldes:</label>
                     <input type="text" id="moldes" name="moldes" required>
                 </div>
                 <div class="form-group">
-                    <label for="lifting-tempo">Tempo de Ação:</label>
+                    <label for="tempo">Tempo de Ação:</label>
                     <input type="text" id="tempo" name="tempo" required>
                 </div>
                 <div class="form-group">
-                    <label for="lifting-tintura">Tintura:</label>
-                    <label><input type="checkbox" name="tintura" value="Sim"> Sim</label>
-                    <label><input type="checkbox" name="tintura" value="Não"> Não</label>
+                    <label>Tintura:</label>
+                        <div class="checkox-group">
+                        <label for="tintura-sim"><input type="checkbox" id="tintura-sim" name="tintura" value="Sim"> Sim</label>
+                        <label for="tintura-nao"><input type="checkbox" id="tintura-nao" name="tintura" value="Não"> Não</label>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="lifting-cor">Cor:</label>
+                    <label for="cor">Cor:</label>
                     <input type="color" id="cor" name="cor">
                 </div>
             </div>
@@ -254,7 +253,6 @@
                         placeholder="Digite seu nome completo">
                 </div>
             </div>
-    </div>
 
     <!-- Botão de Envio -->
     <button type="submit" class="submit-btn">Enviar Formulário</button>
@@ -274,4 +272,5 @@
 
 </body>
 
+</html>
 </html>
