@@ -86,11 +86,9 @@
       flex-direction: column;
     }
 
-
     .hero-content h2 {
       font-size: 2em;
     }
-
   }
 
   @media (max-width: 480px) {
@@ -101,7 +99,6 @@
     .hero-content h2 {
       font-size: 1.5em;
     }
-
   }
 
   /* Formulário */
