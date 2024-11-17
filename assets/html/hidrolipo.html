@@ -150,15 +150,15 @@
         <div class="form-group">
           <label>Gestante:</label>
           <div class="checkbox-group">
-            <label><input type="checkbox" name="gestante" value="Não"> Não</label>
-            <label><input type="checkbox" name="gestante" value="Sim"> Sim</label>
+            <label><input type="radio" name="gestante" value="Não"> Não</label>
+            <label><input type="radio" name="gestante" value="Sim"> Sim</label>
           </div>
         </div>
         <div class="form-group">
-          <label>Anticoncepcional:</label>
+          <label>Faz uso de anticoncepcional:</label>
           <div class="checkbox-group">
-            <label><input type="checkbox" name="anticoncepcional" value="Não"> Não</label>
-            <label><input type="checkbox" name="anticoncepcional" value="Sim"> Sim</label>
+            <label><input type="radio" name="anticoncepcional" value="Não"> Não</label>
+            <label><input type="radio" name="anticoncepcional" value="Sim"> Sim</label>
           </div>
         </div>
       </fieldset>
@@ -177,23 +177,17 @@
       </fieldset>
 
       <!-- 4ª Seção -->
-      <fieldset>
-        <legend>Termo de Responsabilidade</legend>
-        <div class="form-group">
-          <div class="checkbox-group">
-            <input type="checkbox" id="termo" name="termo" required>
-            <label for="termo">Estou ciente e de acordo com todas as informações acima relacionadas.</label>
-          </div>
-        </div>
+
         <div class="form-group">
           <label for="data-termo">Data:</label>
           <input type="date" id="data-termo" name="data_termo" required>
         </div>
+
         <div class="form-group">
           <label for="assinatura">Assinatura do Paciente:</label>
           <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
         </div>
-      </fieldset>
+
       <!-- Botão de Envio -->
       <button type="submit" class="submit-btn">Enviar Formulário</button>
 
