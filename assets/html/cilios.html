@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anamnese Extensão de Cílios - Fada dos Cílios</title>
     <link rel="stylesheet" href="../css/stylecilios.css">
-
 </head>
 
 <body>
@@ -43,19 +42,19 @@
             <div class="form-section">
                 <h3>Identificação</h3>
                 <div class="form-group">
-                    <label for="paciente">Paciente:</label>
+                    <label for="paciente">Paciente: <span class="required">*</span></label>
                     <input type="text" id="paciente" name="paciente" required>
                 </div>
                 <div class="form-group">
-                    <label for="profissao">Profissão:</label>
+                    <label for="profissao">Profissão: <span class="required">*</span></label>
                     <input type="text" id="profissao" name="profissao" required>
                 </div>
                 <div class="form-group">
-                    <label for="data-nascimento">Data de Nascimento:</label>
+                    <label for="data-nascimento">Data de Nascimento: <span class="required">*</span></label>
                     <input type="date" id="data-nascimento" name="data_nascimento" required>
                 </div>
                 <div class="form-group">
-                    <label>Sexo:</label>
+                    <label>Sexo: <span class="required">*</span></label>
                     <div class="radio-group">
                         <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
                         <label><input type="radio" name="sexo" value="Feminino" required> Feminino</label>
@@ -63,11 +62,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="endereco">Endereço:</label>
+                    <label for="endereco">Endereço: <span class="required">*</span></label>
                     <input type="text" id="endereco" name="endereco" required>
                 </div>
                 <div class="form-group">
-                    <label for="cidade">Cidade:</label>
+                    <label for="cidade">Cidade: <span class="required">*</span></label>
                     <select id="cidade" name="cidade" required>
                         <option value="">Selecione</option>
                         <option value="São Paulo">São Paulo</option>
@@ -77,16 +76,16 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="telefone">Telefone:</label>
+                    <label for="telefone">Telefone: <span class="required">*</span></label>
                     <input type="text" id="telefone" name="telefone" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email: <span class="required">*</span></label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="indicado-por">Indicado por:</label>
-                    <input type="text" id="indicado-por" name="indicado_por">
+                    <input type="text" id="indicado-por" name="indicado_por" required>
                 </div>
             </div>
 
@@ -94,183 +93,66 @@
             <div class="form-section">
                 <h3>Avaliação</h3>
                 <div class="form-group">
-                    <label>Já fez extensão de cílios?</label>
+                    <label>Já fez extensão de cílios? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="fez_extensao" value="Não"> Não</label>
-                        <label><input type="checkbox" name="fez_extensao" value="Sim"> Sim</label>
+                        <label><input type="radio" name="fez_extensao" value="Não" required> Não</label>
+                        <label><input type="radio" name="fez_extensao" value="Sim" required> Sim</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Está gestante?</label>
+                    <label>Está gestante? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="gestante" value="Não"> Não</label>
-                        <label><input type="checkbox" name="gestante" value="Sim"> Sim</label>
+                        <label><input type="radio" name="gestante" value="Não" required> Não</label>
+                        <label><input type="radio" name="gestante" value="Sim" required> Sim</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Fez algum procedimento recentemente nos olhos?</label>
+                    <label>Fez algum procedimento recentemente nos olhos? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="procedimentos_olhos" value="Não"> Não</label>
-                        <label><input type="checkbox" name="procedimentos_olhos" value="Sim"> Sim</label>
+                        <label><input type="radio" name="procedimentos_olhos" value="Não" required> Não</label>
+                        <label><input type="radio" name="procedimentos_olhos" value="Sim" required> Sim</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Possui alergia à esmaltes/cosméticos/cianoacrilato?</label>
+                    <label>Possui alergia à esmaltes/cosméticos/cianoacrilato? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="alergias" value="Não"> Não</label>
-                        <label><input type="checkbox" name="alergias" value="Sim"> Sim</label>
-                        <input type="text" id="alergiacilios-qual" name="alergiacilios-qual" placeholder="Especifique">
+                        <label><input type="radio" name="alergias" value="Não" required> Não</label>
+                        <label><input type="radio" name="alergias" value="Sim" required> Sim</label>
+                        <input type="text" id="alergiacilios-qual" name="alergiacilios-qual" placeholder="Especifique" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Possui problema de tireoide?</label>
+                    <label>Possui problema de tireoide? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="tireoide" value="Não"> Não</label>
-                        <label><input type="checkbox" name="tireoide" value="Sim"> Sim</label>
+                        <label><input type="radio" name="tireoide" value="Não" required> Não</label>
+                        <label><input type="radio" name="tireoide" value="Sim" required> Sim</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Possui algum problema respiratório?</label>
+                    <label>Possui algum problema respiratório? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="problema_respiratorio" value="Não"> Não</label>
-                        <label><input type="checkbox" name="problema_respiratorio" value="Sim"> Sim</label>
-                        <input type="text" id="problema-respiratorio-qual" name="problema-respiratorio-qual"
-                            placeholder="Especifique">
+                        <label><input type="radio" name="problema_respiratorio" value="Não" required> Não</label>
+                        <label><input type="radio" name="problema_respiratorio" value="Sim" required> Sim</label>
+                        <input type="text" id="problema-respiratorio-qual" name="problema-respiratorio-qual" placeholder="Especifique" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Faz uso de lentes de contato?</label>
+                    <label>Faz uso de lentes de contato? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="lentes" value="Não"> Não</label>
-                        <label><input type="checkbox" name="lentes" value="Sim"> Sim</label>
+                        <label><input type="radio" name="lentes" value="Não" required> Não</label>
+                        <label><input type="radio" name="lentes" value="Sim" required> Sim</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Possui glaucoma/blefarite/algum problema ocular?</label>
+                    <label>Possui glaucoma/blefarite/algum problema ocular? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="problema_ocular" value="Não"> Não</label>
-                        <label><input type="checkbox" name="problema_ocular" value="Sim"> Sim</label>
-                        <input type="text" id="problema-ocular-qual" name="problema-ocular-qual"
-                            placeholder="Especifique">
+                        <label><input type="radio" name="problema_ocular" value="Não" required> Não</label>
+                        <label><input type="radio" name="problema_ocular" value="Sim" required> Sim</label>
+                        <input type="text" id="problema-ocular-qual" name="problema-ocular-qual" placeholder="Especifique" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Está em tratamento oncológico?</label>
+                    <label>Está em tratamento oncológico? <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <label><input type="checkbox" name="tratamento-oncologico" value="Não"> Não</label>
-                        <label><input type="checkbox" name="tratamento-oncologico" value="Sim"> Sim</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Dorme de lado?</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="dorme_lado" value="Não"> Não</label>
-                        <label><input type="checkbox" name="dorme_lado" value="Sim"> Sim</label>
-                        <input type="text" id="dorme-lado-qual" name="dorme-lado-qual" placeholder="Qual?">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Existe algum problema que julgue ser necessário informar ao profissional antes do
-                        procedimento?</label>
-                    <input type="text" id="informacao-extra" name="informacao-extra" placeholder="Especifique">
-                </div>
-            </div>
-
-            <!-- 3ª Seção -->
-            <div class="form-section">
-                <h3>Ficha Técnica:</h3>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="tipo" value="Fio"> Fio a Fio</label>
-                    <label><input type="checkbox" name="tipo" value="Volume Russo"> Volume Russo</label>
-                    <label><input type="checkbox" name="tipo" value="Hibrido"> Hibrido</label>
-                    <label><input type="checkbox" name="tipo" value="Megavolume"> Megavolume</label>
-                </div>
-
-                <div class="form-group">
-                    <label for="mapping">Mapping:</label>
-                    <input type="text" id="mapping" name="mapping" required>
-                </div>
-                <div class="form-group">
-                    <label for="estilo">Estilo:</label>
-                    <input type="text" id="estilo" name="estilo" required>
-                </div>
-                <div class="form-group">
-                    <label for="modelo">Modelo de Fios:</label>
-                    <input type="text" id="modelo" name="modelo" required>
-                </div>
-                <div class="form-group">
-                    <label for="espessura">Espessura:</label>
-                    <input type="text" id="espessura" name="espessura" required>
-                </div>
-                <div class="form-group">
-                    <label for="curvatura">Curvatura:</label>
-                    <input type="text" id="curvatura" name="curvatura" required>
-                </div>
-                <div class="form-group">
-                    <label for="adesivo">Adesivo:</label>
-                    <input type="text" id="adesivo" name="adesivo" required>
-                </div>
-
-                <h3>Lifting:</h3>
-                <div class="form-group">
-                    <label for="marca">Marca:</label>
-                    <input type="text" id="marca" name="marca" required>
-                </div>
-                <div class="form-group">
-                    <label for="moldes">Pads/Moldes:</label>
-                    <input type="text" id="moldes" name="moldes" required>
-                </div>
-                <div class="form-group">
-                    <label for="tempo">Tempo de Ação:</label>
-                    <input type="text" id="tempo" name="tempo" required>
-                </div>
-                <div class="form-group">
-                    <label>Tintura:</label>
-                        <div class="checkox-group">
-                        <label for="tintura-sim"><input type="checkbox" id="tintura-sim" name="tintura" value="Sim"> Sim</label>
-                        <label for="tintura-nao"><input type="checkbox" id="tintura-nao" name="tintura" value="Não"> Não</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="cor">Cor:</label>
-                    <input type="color" id="cor" name="cor">
-                </div>
-            </div>
-
-            <div class="form-section">
-                <h3>Termo de Responsabilidade</h3>
-                <P> Eu, autorizo a realização do procedimento de Alongamento de Cílios, registro fotográfico do "antes"
-                    e "depois" para documentação e divulgação do profissional. As declarações acima são verdadeiras, não
-                    cabendo ao profissional a responsabilidade por informações omitidas nesta avaliação. Me comprometo a
-                    seguir todos os cuidados necessários após o procedimento.</P>
-                <div class="form-group">
-                    <label for="data-termo">Data:</label>
-                    <input type="date" id="data-termo" name="data_termo" required>
-                </div>
-                <div class="form-group">
-                    <label for="assinatura">Assinatura do Paciente:</label>
-                    <input type="text" id="assinatura" name="assinatura" required
-                        placeholder="Digite seu nome completo">
-                </div>
-            </div>
-
-    <!-- Botão de Envio -->
-    <button type="submit" class="submit-btn">Enviar Formulário</button>
-
-    </form>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Fada dos Cílios. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="#" aria-label="Facebook">Facebook</a> |
-            <a href="#" aria-label="Instagram">Instagram</a> |
-            <a href="#" aria-label="WhatsApp">WhatsApp</a>
-        </div>
-    </footer>
-
-</body>
-
-</html>
-</html>
+                        <label><input type="radio" name="tratamento-oncologico" value="Não" required> Não</label>
+                        <label><input type="radio" name="tratamento-oncologico" value="Sim" required> Sim</label>

@@ -193,7 +193,7 @@
   .submit-btn:hover {
     background-color: var(--dourado-suave);
   }
-
+  
   /* Hero Section */
  .hero {
   background-image: url('/assets/images/cilios.jpg');
