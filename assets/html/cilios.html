@@ -171,4 +171,106 @@
                 <div class="form-group">
                     <label>Existe algum problema que julgue ser necessário informar ao profissional antes do
                         procedimento?</label>
-                   
+                    <input type="text" id="informacao-extra" name="informacao-extra" placeholder="Especifique">
+                </div>
+            </div>
+            <!-- 3ª Seção -->
+            <div class="form-section">
+                <h3>Ficha Técnica:</h3>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="tipo" value="Fio"> Fio a Fio</label>
+                    <label><input type="checkbox" name="tipo" value="Volume Russo"> Volume Russo</label>
+                    <label><input type="checkbox" name="tipo" value="Hibrido"> Hibrido</label>
+                    <label><input type="checkbox" name="tipo" value="Megavolume"> Megavolume</label>
+                </div>
+                <div class="form-group">
+                    <label for="mapping">Mapping:</label>
+                    <input type="text" id="mapping" name="mapping" required>
+                </div>
+                <div class="form-group">
+                    <label for="estilo">Estilo:</label>
+                    <input type="text" id="estilo" name="estilo" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo de Fios:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="espessura">Espessura:</label>
+                    <input type="text" id="espessura" name="espessura" required>
+                </div>
+                <div class="form-group">
+                    <label for="curvatura">Curvatura:</label>
+                    <input type="text" id="curvatura" name="curvatura" required>
+                </div>
+                <div class="form-group">
+                    <label for="adesivo">Adesivo:</label>
+                    <input type="text" id="adesivo" name="adesivo" required>
+                </div>
+                <h3>Lifting:</h3>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+                </div>
+                <div class="form-group">
+                    <label for="moldes">Pads/Moldes:</label>
+                    <input type="text" id="moldes" name="moldes" required>
+                </div>
+                <div class="form-group">
+                    <label for="tempo">Tempo de Ação:</label>
+                    <input type="text" id="tempo" name="tempo" required>
+                </div>
+                <div class="form-group">
+                    <label>Tintura:</label>
+                    <div class="checkox-group">
+                        <label for="tintura-sim"><input type="radio" id="tintura-sim" name="tintura" value="Sim">
+                            Sim</label>
+                        <label for="tintura-nao"><input type="radio" id="tintura-nao" name="tintura" value="Não">
+                            Não</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor:</label>
+                    <input type="color" id="cor" name="cor">
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Termo de Responsabilidade</h3>
+                <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
+
+                <div class="form-group">
+                    <label for="data-termo">Data:</label>
+                    <input type="date" id="data-termo" name="data_termo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assinatura">Assinatura do Paciente:</label>
+                    <input type="text" id="assinatura" name="assinatura" required
+                        placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="termo-concordo">
+                        <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
+                        Declaro que li e concordo com as informações acima
+                    </label>
+                </div>
+            </div>
+            <!-- Botão de Envio -->
+            <button type="submit" class="submit-btn">Enviar Formulário</button>
+        </form>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Fada dos Cílios. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a> |
+            <a href="#" aria-label="Instagram">Instagram</a> |
+            <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+</html>
