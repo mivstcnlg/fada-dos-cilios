@@ -185,19 +185,19 @@
   .checkbox-group,
   .radio-group {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 10px;
   }
 
   .checkbox-group label,
   .radio-group label {
-    margin-right: 20px;
+    margin-bottom: 5px;
     font-weight: normal;
   }
 
-  .form-group .checkbox-group label input,
-  .form-group .radio-group label input {
-    margin-right: 5px;
+  .checkbox-group input,
+  .radio-group input {
+    margin-right: 10px;
   }
 
   .submit-btn {
