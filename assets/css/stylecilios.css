@@ -86,46 +86,23 @@
       flex-direction: column;
     }
 
+
     .hero-content h2 {
       font-size: 2em;
     }
+
   }
 
   @media (max-width: 480px) {
     .hero {
-        height: 40vh;
+      height: 40vh;
     }
 
     .hero-content h2 {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
 
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .form-container {
-        padding: 20px;
-    }
-
-    .form-container h2 {
-        font-size: 2em;
-    }
-
-    .form-section {
-        padding: 15px;
-    }
-
-    .form-group input,
-    .form-group select {
-        font-size: 0.9em;
-    }
-
-    .submit-btn {
-        font-size: 1em;
-        padding: 12px 25px;
-    }
-}
+  }
 
   /* Formulário */
   .form-container {
@@ -185,19 +162,19 @@
   .checkbox-group,
   .radio-group {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
   }
 
   .checkbox-group label,
   .radio-group label {
-    margin-bottom: 5px;
+    margin-right: 20px;
     font-weight: normal;
   }
 
-  .checkbox-group input,
-  .radio-group input {
-    margin-right: 10px;
+  .form-group .checkbox-group label input,
+  .form-group .radio-group label input {
+    margin-right: 5px;
   }
 
   .submit-btn {
