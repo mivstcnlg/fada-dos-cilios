@@ -169,8 +169,8 @@
     font-weight: normal;
   }
 
-  .checkbox-group input,
-  .radio-group input {
+  .form-group .checkbox-group label input,
+  .form-group .radio-group label input {
     margin-right: 5px;
   }
 
@@ -191,8 +191,8 @@
     background-color: var(--dourado-suave);
   }
 
-  /* Hero Section */
-  .hero {
+/* Hero Section */
+.hero {
   background-image: url('/assets/images/hidrolipo.png');
   background-size: cover;
   background-position: center;
@@ -227,19 +227,4 @@
 .hero-content p {
   font-size: 1.2em;
   margin-bottom: 30px;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.checkbox-group input {
-  margin-right: 10px; 
-}
-
-.checkbox-group label {
-  font-weight: normal;
-  margin-right: 20px;
 }
