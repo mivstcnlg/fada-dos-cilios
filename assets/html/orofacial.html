@@ -125,9 +125,9 @@
         <div class="form-group">
           <label>01 - Já fez algum tipo de tratamento estético?</label>
           <div class="checkbox-group">
-            <label><input type="radio" name="tratamento_estetico[]" value="Não"> Não</label>
-            <label><input type="radio" name="tratamento_estetico[]" value="Sim"> Sim</label>
-            <label><input type="text" id="tratamento-qual" name="tratamento-qual"
+            <label><input type="radio" name="tratamento_estetico" value="Não"> Não</label>
+            <label><input type="radio" name="tratamento_estetico" value="Sim"> Sim</label>
+            <label><input type="text" id="tipo-tratamento-estetico" name="tipo-tratamento-estetico"
                 placeholder="Especifique se aplicável"></label>
           </div>
         </div>
@@ -173,10 +173,12 @@
           </div>
         </div>
         <div class="form-group">
-          <label>07 - Está gestante?</label>
+          <label>07 - Gestante</label>
           <div class="checkbox-group">
             <label><input type="radio" name="gestante" value="Não"> Não</label>
             <label><input type="radio" name="gestante" value="Sim"> Sim</label>
+            <input type="text" id="tmp-gestacao" name="tmp-gestacao"
+              placeholder="Especifique se aplicável">
           </div>
           <label>08 - Possui filhos?</label>
           <div class="checkbox-group">
