@@ -1,30 +1,44 @@
 <?php
-// index.php - Processamento do Formulário de Contato
-
+// Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "fada_dos_cilios";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+    // Consultando todos os pacientes de 'orofacial' e 'hidrolipo'
+    $sql = "SELECT * FROM orofacial UNION ALL SELECT * FROM hidrolipo";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
+    // Exibindo os resultados
+    echo "<h1>Pacientes cadastrados</h1>";
+    echo "<table border='1'>
+            <tr>
+                <th>ID</th>
+                <th>Paciente</th>
+                <th>Profissão</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>Email</th>
+            </tr>";
 
-    $sql = "INSERT INTO contatos (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Mensagem enviada com sucesso!";
-    } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>
+                <td>" . htmlspecialchars($row['id']) . "</td>
+                <td>" . htmlspecialchars($row['paciente']) . "</td>
+                <td>" . htmlspecialchars($row['profissao']) . "</td>
+                <td>" . htmlspecialchars($row['data_nasc']) . "</td>
+                <td>" . htmlspecialchars($row['telefone']) . "</td>
+                <td>" . htmlspecialchars($row['email']) . "</td>
+            </tr>";
     }
+    echo "</table>";
 
-    $conn->close();
+} catch (PDOException $e) {
+    echo "Erro: " . $e->getMessage();
 }
 ?>
