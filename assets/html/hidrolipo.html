@@ -112,46 +112,81 @@
       <div class="form-section">
         <h3>Anamnese</h3>
         <div class="form-group">
-          <label>QP:</label>
-          <input type="text" id="qp" name="qp" placeholder="Especifique">
+          <label>QP (Queixa Principal):</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="queixa-principal" value="Não"> Não</label>
+            <label><input type="radio" name="queixa-principal" value="Sim"> Sim</label>
+            <input type="text" id="qp" name="qp" placeholder="Especifique">
+          </div>  
         </div>
         <div class="form-group">
-          <label>Medicamentos:</label>
-          <input type="text" id="medicamentos" name="medicamentos" placeholder="Especifique">
+          <label>Faz uso de medicamentos contiuo:</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="medicamento_continuo" value="Não"> Não</label>
+            <label><input type="radio" name="medicamento_continuo" value="Sim"> Sim</label>
+            <input type="text" id="medicamentos" name="medicamentos" placeholder="Especifique">
+          </div>
         </div>
         <div class="form-group">
-          <label>HF:</label>
-          <input type="text" id="hf" name="hf" placeholder="Especifique">
+          <label>HF (Historico Familiar):</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="historico_familiar" value="Não"> Não</label>
+            <label><input type="radio" name="historico_familiar" value="Sim"> Sim</label>
+            <input type="text" id="hf" name="hf" placeholder="Especifique">
+          </div>
         </div>
         <div class="form-group">
-          <label>HPP:</label>
-          <input type="text" id="hpp" name="hpp" placeholder="Especifique">
+          <label>HPP (Historico Pregressa Pessoal):</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="historico_pregressa_pessoal" value="Não"> Não</label>
+            <label><input type="radio" name="historico_pregressa_pessoal" value="Sim"> Sim</label>
+            <input type="text" id="hpp" name="hpp" placeholder="Especifique">
+          </div>
         </div>
         <div class="form-group">
           <label>Antecedentes oncológico:</label>
-          <input type="text" id="onco" name="onco" placeholder="Especifique">
+          <div class="checkbox-group">
+            <label><input type="radio" name="oncologia" value="Não"> Não</label>
+            <label><input type="radio" name="oncologia" value="Sim"> Sim</label>
+            <input type="text" id="onco" name="onco" placeholder="Especifique">
+          </div>  
         </div>
         <div class="form-group">
-          <label>Diabetes:</label>
-          <input type="text" id="diabetes" name="diabetes" placeholder="Especifique">
+          <label>Possui Diabete:</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="diabete" value="Não"> Não</label>
+            <label><input type="radio" name="diabete" value="Sim"> Sim</label>
+          </div>  
         </div>
         <div class="form-group">
           <label>Hipertensão ou Hipotensão:</label>
-          <input type="text" id="pressao" name="pressao" placeholder="Especifique">
+          <div class="checkbox-group">
+            <label><input type="radio" name="hipotensao_hipotensao" value="Não"> Não</label>
+            <label><input type="radio" name="hipotensao_hipotensao" value="Sim"> Sim</label>
+          </div>  
         </div>
         <div class="form-group">
           <label>Problema Circulatório:</label>
-          <input type="text" id="problema-circulatorio" name="problema-circulatorio" placeholder="Especifique">
+          <div class="checkbox-group">
+            <label><input type="radio" name="problema-circular" value="Não"> Não</label>
+            <label><input type="radio" name="problema-circular" value="Sim"> Sim</label>
+            <input type="text" id="problema-circulatorio" name="problema-circulatorio" placeholder="Especifique">
+          </div> 
         </div>
         <div class="form-group">
           <label>Alergias:</label>
-          <input type="text" id="alergias" name="alergias" placeholder="Especifique">
+          <div class="checkbox-group">
+            <label><input type="radio" name="alergia-qual" value="Não"> Não</label>
+            <label><input type="radio" name="alergia-qual" value="Sim"> Sim</label>
+            <input type="text" id="alergias" name="alergias" placeholder="Especifique">
+          </div> 
         </div>
         <div class="form-group">
           <label>Gestante:</label>
           <div class="checkbox-group">
-            <label><input type="radio" name="gestante" value="Não"> Não</label>
-            <label><input type="radio" name="gestante" value="Sim"> Sim</label>
+            <label><input type="radio" name="tempo_gestante" value="Não"> Não</label>
+            <label><input type="radio" name="tempo_gestante" value="Sim"> Sim</label>
+            <input type="text" id="gestante" name="gestante" placeholder="Especifique">
           </div>
         </div>
         <div class="form-group">
