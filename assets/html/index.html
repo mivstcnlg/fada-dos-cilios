@@ -43,7 +43,7 @@
   <!-- Contato -->
   <section id="contato" class="contato">
     <h2>Entre em Contato</h2>
-    <form action="processo_index.php" method="post">
+    <form id="formContato" method="post">
       <input type="text" name="nome" placeholder="Seu Nome" required>
       <input type="email" name="email" placeholder="Seu Email" required>
       <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
@@ -63,6 +63,36 @@
       <a href="#" aria-label="WhatsApp">WhatsApp</a>
     </div>
   </footer>
+
+  <!-- Incluir jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Enviar o formulário sem recarregar a página
+      $('#formContato').submit(function(event) {
+        event.preventDefault();  // Impede o envio padrão do formulário
+
+        var formData = $(this).serialize();  // Serializa os dados do formulário
+
+        $.ajax({
+          url: '/fada-dos-cilios/assets/php/processo_index.php', // Caminho do seu PHP
+          type: 'POST',
+          data: formData,
+          success: function(response) {
+            // Exibir pop-up com a mensagem de sucesso
+            alert('Mensagem enviada com sucesso. Agradecemos seu contato. Em breve retornaremos com mais informações sobre os detalhes dos procedimentos.');
+            // Limpar o formulário
+            $('#formContato')[0].reset();
+          },
+          error: function() {
+            // Exibir pop-up com a mensagem de erro, caso aconteça algum problema no envio
+            alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 

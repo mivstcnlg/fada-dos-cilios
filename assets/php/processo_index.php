@@ -30,6 +30,7 @@ try {
         // Executando a declaração
         $stmt->execute();
 
+        // Retornando uma resposta de sucesso
         echo "Mensagem enviada com sucesso!";
     }
 
