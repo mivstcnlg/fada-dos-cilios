@@ -52,11 +52,9 @@ try {
         $assinatura = $_POST['assinatura'];
         $termo_acordado = $_POST['termo_acordado'];
 
-        // Preparando a consulta SQL com placeholders
-        $sql = "INSERT INTO cilios 
-                (paciente, profissao, data_nasc, sexo, endereco, cidade, telefone, email, indicado_por, fez_extensao, gestante, tempo_gestacao, procedimento_olhos, alergia_esmalte, alergia_esmalte_qual, tireoide, problema_respiratorio, tipo_problema_respiratorio, uso_lentes, problema_ocular, tipo_problema_ocular, tratamento_oncologico, dorme_de_lado, posicao, problemas_serios, tipo_procedimento, mapping, estilo, modelo_de_fios, espessura, curvatura, adesivo, marca, pads, tempo_de_acao, titura, cor, data_tempo, assinatura, termo_acordado) 
-                VALUES 
-                (:paciente, :profissao, :data_nasc, :sexo, :endereco, :cidade, :telefone, :email, :indicado_por, :fez_extensao, :gestante, :tempo_gestacao, :procedimento_olhos, :alergia_esmalte, :alergia_esmalte_qual, :tireoide, :problema_respiratorio, :tipo_problema_respiratorio, :uso_lentes, :problema_ocular, :tipo_problema_ocular, :tratamento_oncologico, :dorme_de_lado, :posicao, :problemas_serios, :tipo_procedimento, :mapping, :estilo, :modelo_de_fios, :espessura, :curvatura, :adesivo, :marca, :pads, :tempo_de_acao, :titura, :cor, :data_tempo, :assinatura, :termo_acordado)";
+        // Preparando a consulta SQL
+        $sql = "INSERT INTO cilios (paciente, profissao, data_nasc, sexo, endereco, cidade, telefone, email, indicado_por, fez_extensao, gestante, tempo_gestacao, procedimento_olhos, alergia_esmalte, alergia_esmalte_qual, tireoide, problema_respiratorio, tipo_problema_respiratorio, uso_lentes, problema_ocular, tipo_problema_ocular, tratamento_oncologico, dorme_de_lado, posicao, problemas_serios, tipo_procedimento, mapping, estilo, modelo_de_fios, espessura, curvatura, adesivo, marca, pads, tempo_de_acao, tintura, cor, data_tempo, assinatura, termo_acordado) 
+                VALUES (:paciente, :profissao, :data_nasc, :sexo, :endereco, :cidade, :telefone, :email, :indicado_por, :fez_extensao, :gestante, :tempo_gestacao, :procedimento_olhos, :alergia_esmalte, :alergia_esmalte_qual, :tireoide, :problema_respiratorio, :tipo_problema_respiratorio, :uso_lentes, :problema_ocular, :tipo_problema_ocular, :tratamento_oncologico, :dorme_de_lado, :posicao, :problemas_serios, :tipo_procedimento, :mapping, :estilo, :modelo_de_fios, :espessura, :curvatura, :adesivo, :marca, :pads, :tempo_de_acao, :titura, :cor, :data_tempo, :assinatura, :termo_acordado)";
 
         // Preparando a declaração
         $stmt = $pdo->prepare($sql);
@@ -106,7 +104,7 @@ try {
         // Executando a declaração
         $stmt->execute();
 
-        echo "Cadastro de paciente de cílios realizado com sucesso!";
+        echo "Cadastro realizado com sucesso!";
     }
 
 } catch (PDOException $e) {

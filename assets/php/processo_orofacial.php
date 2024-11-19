@@ -22,43 +22,41 @@ try {
         $email = htmlspecialchars($_POST['email']);
         $indicado_por = htmlspecialchars($_POST['indicado_por']);
         $inicio_tratamento = $_POST['inicio_tratamento'];
-        $objetivo_consulta = $_POST['objetivo_consulta'];
-        $nome_emergencia = $_POST['nome_emergencia'];
+        $objetivo_consulta = htmlspecialchars($_POST['objetivo_consulta']);
+        $nome_emergencia = htmlspecialchars($_POST['nome_emergencia']);
         $telefone_emergencia = $_POST['telefone_emergencia'];
         $tratamento_estetico = $_POST['tratamento_estetico'];
         $tipo_tratamento_estetico = $_POST['tipo_tratamento_estetico'];
         $alergia_medicamento = $_POST['alergia_medicamento'];
-        $alergia_medicamento_qual = $_POST['alergia_medicamento_qual'];
+        $alergia_medicamento_qual = htmlspecialchars($_POST['alergia_medicamento_qual']);
         $medicamento = $_POST['medicamento'];
-        $medicamento_qual = $_POST['medicamento_qual'];
+        $medicamento_qual = htmlspecialchars($_POST['medicamento_qual']);
         $fumante = $_POST['fumante'];
         $fumante_tempo = $_POST['fumante_tempo'];
         $uso_acido = $_POST['uso_acido'];
-        $tipo_acido_usado = $_POST['tipo_acido_usado'];
+        $tipo_acido_usado = htmlspecialchars($_POST['tipo_acido_usado']);
         $tratamento_medico = $_POST['tratamento_medico'];
-        $tipo_tratamento_medico = $_POST['tipo_tratamento_medico'];
+        $tipo_tratamento_medico = htmlspecialchars($_POST['tipo_tratamento_medico']);
         $gestante = $_POST['gestante'];
         $tempo_gestacao = $_POST['tempo_gestacao'];
         $filhos = $_POST['filhos'];
         $quantidade_filhos = $_POST['quantidade_filhos'];
         $problema_cardiaco = $_POST['problema_cardiaco'];
-        $tipo_problema_cardiaco = $_POST['tipo_problema_cardiaco'];
+        $tipo_problema_cardiaco = htmlspecialchars($_POST['tipo_problema_cardiaco']);
         $exposicao_sol = $_POST['exposicao_sol'];
         $tempo_exposicao_sol = $_POST['tempo_exposicao_sol'];
         $cancer = $_POST['cancer'];
-        $tipo_cancer = $_POST['tipo_cancer'];
+        $tipo_cancer = htmlspecialchars($_POST['tipo_cancer']);
         $intolerancia_lactose = $_POST['intolerancia_lactose'];
         $diabete = $_POST['diabete'];
         $alergia_ovo = $_POST['alergia_ovo'];
         $data_tempo = $_POST['data_tempo'];
-        $assinatura = $_POST['assinatura'];
+        $assinatura = htmlspecialchars($_POST['assinatura']);
         $termo_acordado = $_POST['termo_acordado'];
 
-        // Preparando a consulta SQL com placeholders
-        $sql = "INSERT INTO orofacial 
-                (paciente, profissao, data_nasc, sexo, estado_civil, endereco, cidade, telefone, email, indicado_por, inicio_tratamento, objetivo_consulta, nome_emergencia, telefone_emergencia, tratamento_estetico, tipo_tratamento_estetico, alergia_medicamento, alergia_medicamento_qual, medicamento, medicamento_qual, fumante, fumante_tempo, uso_acido, tipo_acido_usado, tratamento_medico, tipo_tratamento_medico, gestante, tempo_gestacao, filhos, quantidade_filhos, problema_cardiaco, tipo_problema_cardiaco, exposicao_sol, tempo_exposicao_sol, cancer, tipo_cancer, intolerancia_lactose, diabete, alergia_ovo, data_tempo, assinatura, termo_acordado) 
-                VALUES 
-                (:paciente, :profissao, :data_nasc, :sexo, :estado_civil, :endereco, :cidade, :telefone, :email, :indicado_por, :inicio_tratamento, :objetivo_consulta, :nome_emergencia, :telefone_emergencia, :tratamento_estetico, :tipo_tratamento_estetico, :alergia_medicamento, :alergia_medicamento_qual, :medicamento, :medicamento_qual, :fumante, :fumante_tempo, :uso_acido, :tipo_acido_usado, :tratamento_medico, :tipo_tratamento_medico, :gestante, :tempo_gestacao, :filhos, :quantidade_filhos, :problema_cardiaco, :tipo_problema_cardiaco, :exposicao_sol, :tempo_exposicao_sol, :cancer, :tipo_cancer, :intolerancia_lactose, :diabete, :alergia_ovo, :data_tempo, :assinatura, :termo_acordado)";
+        // Preparando a consulta SQL
+        $sql = "INSERT INTO orofacial (paciente, profissao, data_nasc, sexo, estado_civil, endereco, cidade, telefone, email, indicado_por, inicio_tratamento, objetivo_consulta, nome_emergencia, telefone_emergencia, tratamento_estetico, tipo_tratamento_estetico, alergia_medicamento, alergia_medicamento_qual, medicamento, medicamento_qual, fumante, fumante_tempo, uso_acido, tipo_acido_usado, tratamento_medico, tipo_tratamento_medico, gestante, tempo_gestacao, filhos, quantidade_filhos, problema_cardiaco, tipo_problema_cardiaco, exposicao_sol, tempo_exposicao_sol, cancer, tipo_cancer, intolerancia_lactose, diabete, alergia_ovo, data_tempo, assinatura, termo_acordado) 
+                VALUES (:paciente, :profissao, :data_nasc, :sexo, :estado_civil, :endereco, :cidade, :telefone, :email, :indicado_por, :inicio_tratamento, :objetivo_consulta, :nome_emergencia, :telefone_emergencia, :tratamento_estetico, :tipo_tratamento_estetico, :alergia_medicamento, :alergia_medicamento_qual, :medicamento, :medicamento_qual, :fumante, :fumante_tempo, :uso_acido, :tipo_acido_usado, :tratamento_medico, :tipo_tratamento_medico, :gestante, :tempo_gestacao, :filhos, :quantidade_filhos, :problema_cardiaco, :tipo_problema_cardiaco, :exposicao_sol, :tempo_exposicao_sol, :cancer, :tipo_cancer, :intolerancia_lactose, :diabete, :alergia_ovo, :data_tempo, :assinatura, :termo_acordado)";
 
         // Preparando a declaração
         $stmt = $pdo->prepare($sql);
@@ -110,7 +108,7 @@ try {
         // Executando a declaração
         $stmt->execute();
 
-        echo "Cadastro de paciente orofacial realizado com sucesso!";
+        echo "Cadastro realizado com sucesso!";
     }
 
 } catch (PDOException $e) {
