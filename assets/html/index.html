@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fada dos Cílios - Beleza que Encanta</title>
   <link rel="stylesheet" href="../css/styleindex.css">
+
 </head>
 
 <body>
@@ -31,13 +32,14 @@
     </div>
   </section>
 
-  <!-- Sobre Nós -->
   <section id="sobre-nos" class="sobre-nos">
     <h2>Sobre a Fada dos Cílios</h2>
-    <p>Na Fada dos Cílios, nossa missão é realçar a sua beleza natural através de procedimentos estéticos de alta qualidade. Com uma equipe de profissionais experientes e um ambiente acolhedor, oferecemos serviços personalizados para atender às suas necessidades e desejos. Utilize nossa expertise para transformar seu olhar e aumentar sua confiança.</p>
+    <p>Na Fada dos Cílios, nossa missão é realçar a sua beleza natural através de procedimentos estéticos de alta
+      qualidade. Com uma equipe de profissionais experientes e um ambiente acolhedor, oferecemos serviços personalizados
+      para atender às suas necessidades e desejos. Utilize nossa expertise para transformar seu olhar e aumentar sua
+      confiança.</p>
   </section>
 
-  <!-- Contato -->
   <section id="contato" class="contato">
     <h2>Entre em Contato</h2>
     <form id="formContato" method="post">
@@ -51,7 +53,6 @@
     <p>(11) 91234-5678</p>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2024 Fada dos Cílios. Todos os direitos reservados.</p>
     <div class="social-links">
@@ -61,29 +62,23 @@
     </div>
   </footer>
 
-  <!-- Incluir jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-    $(document).ready(function() {
-      // Enviar o formulário sem recarregar a página
-      $('#formContato').submit(function(event) {
-        event.preventDefault();  // Impede o envio padrão do formulário
-
-        var formData = $(this).serialize();  // Serializa os dados do formulário
+    $(document).ready(function () {
+      $('#formContato').submit(function (event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
 
         $.ajax({
-          url: '/fada-dos-cilios/assets/php/processo_index.php', // Caminho do seu PHP
+          url: '/fada-dos-cilios/assets/php/processo_index.php',
           type: 'POST',
           data: formData,
-          success: function(response) {
-            // Exibir pop-up com a mensagem de sucesso
+          success: function (response) {
             alert('Mensagem enviada com sucesso. Agradecemos seu contato. Em breve retornaremos com mais informações sobre os detalhes dos procedimentos.');
-            // Limpar o formulário
             $('#formContato')[0].reset();
           },
-          error: function() {
-            // Exibir pop-up com a mensagem de erro, caso aconteça algum problema no envio
+          error: function () {
             alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
           }
         });
