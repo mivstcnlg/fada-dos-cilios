@@ -34,7 +34,7 @@
             colagem de fios sintéticos ou de seda nos cílios naturais, com o objetivo de dar mais volume, realce e
             definição ao olhar.</p>
         <br></br>
-        <form action="C:\xampp\htdocs\fada-dos-cilios\assets\html\cilios.html" method="post">
+        <form action="cilios.html" method="post">
 
             <div class="form-section">
                 <h3>Identificação</h3>
@@ -279,75 +279,82 @@
         </div>
     </footer>
     <script>
-        const cpfInput = document.getElementById("cpf");
-        const pacienteInput = document.getElementById("paciente");
-        const profissaoInput = document.getElementById("profissao");
-        const dataNascimentoInput = document.getElementById("data-nascimento");
-        const telefoneInput = document.getElementById("telefone");
-        const emailInput = document.getElementById("email");
-        const enderecoInput = document.getElementById("endereco");
-        const cidadeInput = document.getElementById("cidade");
-
-        cpfInput.addEventListener("input", () => {
-            let value = cpfInput.value.replace(/\D/g, "");
-            value = value.replace(/(\d{3})(\d)/, "$1.$2");
-            value = value.replace(/(\d{3})(\d)/, "$1.$2");
-            value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
-            cpfInput.value = value;
-        });
-
-        telefoneInput.addEventListener("input", () => {
-            let value = telefoneInput.value.replace(/\D/g, "");
-            value = value.replace(/(\d{2})(\d)/, "($1) $2");
-            value = value.replace(/(\d{5})(\d)/, "$1-$2");
-            telefoneInput.value = value;
-        });
-
-        function checkCpfExists(cpf) {
-            return localStorage.getItem(cpf) !== null;
-        }
-
-        function fillFormWithData(cpf) {
-            const userData = JSON.parse(localStorage.getItem(cpf));
-            pacienteInput.value = userData.paciente;
-            profissaoInput.value = userData.profissao;
-            dataNascimentoInput.value = userData.dataNascimento;
-            telefoneInput.value = userData.telefone;
-            emailInput.value = userData.email;
-            enderecoInput.value = userData.endereco;
-            cidadeInput.value = userData.cidade;
-        }
-
-        function saveFormData() {
-            const formData = {
-                paciente: pacienteInput.value,
-                profissao: profissaoInput.value,
-                dataNascimento: dataNascimentoInput.value,
-                telefone: telefoneInput.value,
-                email: emailInput.value,
-                endereco: enderecoInput.value,
-                cidade: cidadeInput.value
-            };
-            localStorage.setItem(cpfInput.value, JSON.stringify(formData));
-        }
-
-        cpfInput.addEventListener("blur", () => {
-            const cpfValue = cpfInput.value.replace(/\D/g, "");
-            if (checkCpfExists(cpfValue)) {
-                alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
-                fillFormWithData(cpfValue);
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("form");
+            const cpfInput = document.getElementById("cpf");
+            const pacienteInput = document.getElementById("paciente");
+            const profissaoInput = document.getElementById("profissao");
+            const dataNascimentoInput = document.getElementById("data-nascimento");
+            const telefoneInput = document.getElementById("telefone");
+            const emailInput = document.getElementById("email");
+            const enderecoInput = document.getElementById("endereco");
+            const cidadeInput = document.getElementById("cidade");
+    
+            function showSuccessPopup() {
+                alert("Formulário enviado com sucesso!");
             }
-        });
-
-        const form = document.querySelector("form");
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (!checkCpfExists(cpfInput.value.replace(/\D/g, ""))) {
-                saveFormData();
+    
+            cpfInput.addEventListener("input", () => {
+                let value = cpfInput.value.replace(/\D/g, "");
+                value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+                cpfInput.value = value;
+            });
+    
+            telefoneInput.addEventListener("input", () => {
+                let value = telefoneInput.value.replace(/\D/g, "");
+                value = value.replace(/(\d{2})(\d)/, "($1) $2");
+                value = value.replace(/(\d{5})(\d)/, "$1-$2");
+                telefoneInput.value = value;
+            });
+    
+            function checkCpfExists(cpf) {
+                return localStorage.getItem(cpf) !== null;
             }
-            form.submit();
+    
+            function fillFormWithData(cpf) {
+                const userData = JSON.parse(localStorage.getItem(cpf));
+                pacienteInput.value = userData.paciente;
+                profissaoInput.value = userData.profissao;
+                dataNascimentoInput.value = userData.dataNascimento;
+                telefoneInput.value = userData.telefone;
+                emailInput.value = userData.email;
+                enderecoInput.value = userData.endereco;
+                cidadeInput.value = userData.cidade;
+            }
+    
+            function saveFormData() {
+                const formData = {
+                    paciente: pacienteInput.value,
+                    profissao: profissaoInput.value,
+                    dataNascimento: dataNascimentoInput.value,
+                    telefone: telefoneInput.value,
+                    email: emailInput.value,
+                    endereco: enderecoInput.value,
+                    cidade: cidadeInput.value
+                };
+                localStorage.setItem(cpfInput.value.replace(/\D/g, ""), JSON.stringify(formData));
+            }
+    
+            cpfInput.addEventListener("blur", () => {
+                const cpfValue = cpfInput.value.replace(/\D/g, "");
+                if (checkCpfExists(cpfValue)) {
+                    alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
+                    fillFormWithData(cpfValue);
+                }
+            });
+    
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                if (!checkCpfExists(cpfInput.value.replace(/\D/g, ""))) {
+                    saveFormData();
+                }
+                showSuccessPopup();
+                form.submit();
+            });
         });
-    </script>
+    </script>    
 </body>
 
 </html>
