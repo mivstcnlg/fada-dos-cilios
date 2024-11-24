@@ -11,7 +11,6 @@
 
 <body>
 
-  <!-- Header -->
   <header>
     <h1>Fada dos Cílios</h1>
 
@@ -31,7 +30,6 @@
     </div>
   </section>
 
-  <!-- Formulário -->
   <div class="form-container">
     <h2>Anamnese Hidrolipoclasia Não Aspirativa</h2>
     <p>A hidrolipoclasia não aspirativa, também conhecida como hidrolipoclasia ultrassônica, é um procedimento estético
@@ -39,9 +37,13 @@
     <br></br>
     <form action="hidrolipo.html" method="post">
 
-      <!-- 1ª Seção -->
       <div class="form-section">
         <h3>Identificação</h3>
+        <div class="form-group">
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="123.456.789-00"
+            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+        </div>
         <div class="form-group">
           <label for="paciente">Paciente:</label>
           <input type="text" id="paciente" name="paciente" required>
@@ -88,7 +90,7 @@
         </div>
         <div class="form-group">
           <label for="telefone">Telefone:</label>
-          <input type="text" id="telefone" name="telefone" required>
+          <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
@@ -108,7 +110,6 @@
         </div>
       </div>
 
-      <!-- 2ª Seção -->
       <div class="form-section">
         <h3>Anamnese</h3>
         <div class="form-group">
@@ -209,7 +210,6 @@
 
       </div>
 
-      <!-- 3ª Seção -->
       <div class="form-section">
         <h3>Em caso de emergência avisar:</h3>
         <div class="form-group">
@@ -223,7 +223,6 @@
         </div>
       </div>
 
-      <!-- 4ª Seção -->
       <div class="form-section">
         <h3>Termo de Responsabilidade</h3>
         <div class="form-group">
@@ -264,6 +263,42 @@
       <a href="#" aria-label="WhatsApp">WhatsApp</a>
     </div>
   </footer>
+  <script>
+    const cpfInput = document.getElementById("cpf");
+    cpfInput.addEventListener("input", () => {
+      let value = cpfInput.value.replace(/\D/g, "");
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+      cpfInput.value = value;
+    });
+
+    const telefoneInput = document.getElementById("telefone");
+    telefoneInput.addEventListener("input", () => {
+      let value = telefoneInput.value.replace(/\D/g, "");
+      value = value.replace(/(\d{2})(\d)/, "($1) $2");
+      value = value.replace(/(\d{5})(\d)/, "$1-$2");
+      telefoneInput.value = value;
+    });
+
+    function toggleAdditionalField(inputs, field) {
+      inputs.forEach(input => {
+        input.addEventListener("change", () => {
+          field.style.display = input.value === "Sim" && input.checked ? "block" : "none";
+        });
+      });
+    }
+
+    toggleAdditionalField(
+      document.getElementsByName("queixa-principal"),
+      document.getElementById("qp")
+    );
+
+    toggleAdditionalField(
+      document.getElementsByName("medicamento_continuo"),
+      document.getElementById("medicamentos")
+    );
+  </script>
 
 </body>
 

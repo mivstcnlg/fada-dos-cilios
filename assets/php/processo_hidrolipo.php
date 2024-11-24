@@ -1,5 +1,4 @@
 <?php
-// Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +9,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Filtrando dados de entrada
         $paciente = htmlspecialchars($_POST['paciente']);
         $profissao = htmlspecialchars($_POST['profissao']);
         $data_nasc = $_POST['data_nasc'];
@@ -47,15 +45,31 @@ try {
         $data_tempo = $_POST['data_tempo'];
         $assinatura = htmlspecialchars($_POST['assinatura']);
         $termo_acordado = $_POST['termo_acordado'];
+        $cpf = $_POST['cpf'];
 
-        // Preparando a consulta SQL
-        $sql = "INSERT INTO hidrolipo (paciente, profissao, data_nasc, sexo, estado_civil, endereco, cidade, telefone, email, indicado_por, inicio_tratamento, objetivo_consulta, queixa_principal, tipo_queixa, medicacao_continua, tipo_medicacao_continua, historico_familiar, problema_historico_familiar, historico_pregressa_familiar, problema_pregressa_familiar, oncologia, historico_oncologia, diabete, hipertensao_hipotensao, problema_circular, tipo_problema_circular, alergia, tipo_alergia, gestante, tempo_gestacao, anticoncepcional, nome_emergencia, telefone_emergencia, data_tempo, assinatura, termo_acordado) 
-                VALUES (:paciente, :profissao, :data_nasc, :sexo, :estado_civil, :endereco, :cidade, :telefone, :email, :indicado_por, :inicio_tratamento, :objetivo_consulta, :queixa_principal, :tipo_queixa, :medicacao_continua, :tipo_medicacao_continua, :historico_familiar, :problema_historico_familiar, :historico_pregressa_familiar, :problema_pregressa_familiar, :oncologia, :historico_oncologia, :diabete, :hipertensao_hipotensao, :problema_circular, :tipo_problema_circular, :alergia, :tipo_alergia, :gestante, :tempo_gestacao, :anticoncepcional, :nome_emergencia, :telefone_emergencia, :data_tempo, :assinatura, :termo_acordado)";
+        $stmt = $pdo->prepare("SELECT * FROM pacientes WHERE cpf = :cpf");
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->execute();
 
-        // Preparando a declaração
+        $pacienteData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($pacienteData) {
+            $paciente = $pacienteData['paciente'];
+            $profissao = $pacienteData['profissao'];
+            $data_nasc = $pacienteData['data_nasc'];
+            $sexo = $pacienteData['sexo'];
+            $endereco = $pacienteData['endereco'];
+            $cidade = $pacienteData['cidade'];
+            $telefone = $pacienteData['telefone'];
+            $email = $pacienteData['email'];
+            $indicado_por = $pacienteData['indicado_por'];
+        }
+
+        $sql = "INSERT INTO hidrolipo (paciente, profissao, data_nasc, sexo, estado_civil, endereco, cidade, telefone, email, indicado_por, inicio_tratamento, objetivo_consulta, queixa_principal, tipo_queixa, medicacao_continua, tipo_medicacao_continua, historico_familiar, problema_historico_familiar, historico_pregressa_familiar, problema_pregressa_familiar, oncologia, historico_oncologia, diabete, hipertensao_hipotensao, problema_circular, tipo_problema_circular, alergia, tipo_alergia, gestante, tempo_gestacao, anticoncepcional, nome_emergencia, telefone_emergencia, data_tempo, assinatura, termo_acordado, cpf) 
+                VALUES (:paciente, :profissao, :data_nasc, :sexo, :estado_civil, :endereco, :cidade, :telefone, :email, :indicado_por, :inicio_tratamento, :objetivo_consulta, :queixa_principal, :tipo_queixa, :medicacao_continua, :tipo_medicacao_continua, :historico_familiar, :problema_historico_familiar, :historico_pregressa_familiar, :problema_pregressa_familiar, :oncologia, :historico_oncologia, :diabete, :hipertensao_hipotensao, :problema_circular, :tipo_problema_circular, :alergia, :tipo_alergia, :gestante, :tempo_gestacao, :anticoncepcional, :nome_emergencia, :telefone_emergencia, :data_tempo, :assinatura, :termo_acordado, :cpf)";
+
         $stmt = $pdo->prepare($sql);
 
-        // Associando os parâmetros
         $stmt->bindParam(':paciente', $paciente);
         $stmt->bindParam(':profissao', $profissao);
         $stmt->bindParam(':data_nasc', $data_nasc);
@@ -92,8 +106,8 @@ try {
         $stmt->bindParam(':data_tempo', $data_tempo);
         $stmt->bindParam(':assinatura', $assinatura);
         $stmt->bindParam(':termo_acordado', $termo_acordado);
+        $stmt->bindParam(':cpf', $cpf);
 
-        // Executando a declaração
         $stmt->execute();
 
         echo "Cadastro realizado com sucesso!";

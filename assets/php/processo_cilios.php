@@ -1,5 +1,4 @@
 <?php
-// Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +9,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Filtrando dados de entrada
         $paciente = htmlspecialchars($_POST['paciente']);
         $profissao = htmlspecialchars($_POST['profissao']);
         $data_nasc = $_POST['data_nasc'];
@@ -51,15 +49,31 @@ try {
         $data_tempo = $_POST['data_tempo'];
         $assinatura = $_POST['assinatura'];
         $termo_acordado = $_POST['termo_acordado'];
+        $cpf = $_POST['cpf'];
 
-        // Preparando a consulta SQL
-        $sql = "INSERT INTO cilios (paciente, profissao, data_nasc, sexo, endereco, cidade, telefone, email, indicado_por, fez_extensao, gestante, tempo_gestacao, procedimento_olhos, alergia_esmalte, alergia_esmalte_qual, tireoide, problema_respiratorio, tipo_problema_respiratorio, uso_lentes, problema_ocular, tipo_problema_ocular, tratamento_oncologico, dorme_de_lado, posicao, problemas_serios, tipo_procedimento, mapping, estilo, modelo_de_fios, espessura, curvatura, adesivo, marca, pads, tempo_de_acao, tintura, cor, data_tempo, assinatura, termo_acordado) 
-                VALUES (:paciente, :profissao, :data_nasc, :sexo, :endereco, :cidade, :telefone, :email, :indicado_por, :fez_extensao, :gestante, :tempo_gestacao, :procedimento_olhos, :alergia_esmalte, :alergia_esmalte_qual, :tireoide, :problema_respiratorio, :tipo_problema_respiratorio, :uso_lentes, :problema_ocular, :tipo_problema_ocular, :tratamento_oncologico, :dorme_de_lado, :posicao, :problemas_serios, :tipo_procedimento, :mapping, :estilo, :modelo_de_fios, :espessura, :curvatura, :adesivo, :marca, :pads, :tempo_de_acao, :titura, :cor, :data_tempo, :assinatura, :termo_acordado)";
+        $stmt = $pdo->prepare("SELECT * FROM pacientes WHERE cpf = :cpf");
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->execute();
 
-        // Preparando a declaração
+        $pacienteData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($pacienteData) {
+            $paciente = $pacienteData['paciente'];
+            $profissao = $pacienteData['profissao'];
+            $data_nasc = $pacienteData['data_nasc'];
+            $sexo = $pacienteData['sexo'];
+            $endereco = $pacienteData['endereco'];
+            $cidade = $pacienteData['cidade'];
+            $telefone = $pacienteData['telefone'];
+            $email = $pacienteData['email'];
+            $indicado_por = $pacienteData['indicado_por'];
+        }
+
+        $sql = "INSERT INTO cilios (paciente, profissao, data_nasc, sexo, endereco, cidade, telefone, email, indicado_por, fez_extensao, gestante, tempo_gestacao, procedimento_olhos, alergia_esmalte, alergia_esmalte_qual, tireoide, problema_respiratorio, tipo_problema_respiratorio, uso_lentes, problema_ocular, tipo_problema_ocular, tratamento_oncologico, dorme_de_lado, posicao, problemas_serios, tipo_procedimento, mapping, estilo, modelo_de_fios, espessura, curvatura, adesivo, marca, pads, tempo_de_acao, tintura, cor, data_tempo, assinatura, termo_acordado, cpf) 
+                VALUES (:paciente, :profissao, :data_nasc, :sexo, :endereco, :cidade, :telefone, :email, :indicado_por, :fez_extensao, :gestante, :tempo_gestacao, :procedimento_olhos, :alergia_esmalte, :alergia_esmalte_qual, :tireoide, :problema_respiratorio, :tipo_problema_respiratorio, :uso_lentes, :problema_ocular, :tipo_problema_ocular, :tratamento_oncologico, :dorme_de_lado, :posicao, :problemas_serios, :tipo_procedimento, :mapping, :estilo, :modelo_de_fios, :espessura, :curvatura, :adesivo, :marca, :pads, :tempo_de_acao, :titura, :cor, :data_tempo, :assinatura, :termo_acordado, :cpf)";
+
         $stmt = $pdo->prepare($sql);
 
-        // Associando os parâmetros
         $stmt->bindParam(':paciente', $paciente);
         $stmt->bindParam(':profissao', $profissao);
         $stmt->bindParam(':data_nasc', $data_nasc);
@@ -100,8 +114,8 @@ try {
         $stmt->bindParam(':data_tempo', $data_tempo);
         $stmt->bindParam(':assinatura', $assinatura);
         $stmt->bindParam(':termo_acordado', $termo_acordado);
+        $stmt->bindParam(':cpf', $cpf);
 
-        // Executando a declaração
         $stmt->execute();
 
         echo "Cadastro realizado com sucesso!";

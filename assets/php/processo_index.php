@@ -1,5 +1,4 @@
 <?php
-// Conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,28 +9,38 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Filtrando dados de entrada
         $nome = htmlspecialchars($_POST['nome']);
         $email = htmlspecialchars($_POST['email']);
+        $cpf = $_POST['cpf'];
+        $telefone = $_POST['telefone'];
         $mensagem = htmlspecialchars($_POST['mensagem']);
 
-        // Preparando a consulta SQL
-        $sql = "INSERT INTO contato (nome, email, mensagem) 
-                VALUES (:nome, :email, :mensagem)";
-
-        // Preparando a declaração
-        $stmt = $pdo->prepare($sql);
-
-        // Associando os parâmetros
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':mensagem', $mensagem);
-
-        // Executando a declaração
+        $stmt = $pdo->prepare("SELECT * FROM pacientes WHERE cpf = :cpf");
+        $stmt->bindParam(':cpf', $cpf);
         $stmt->execute();
 
-        // Retornando uma resposta de sucesso
-        echo "Mensagem enviada com sucesso!";
+        $pacienteData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($pacienteData) {
+            $nome = $pacienteData['nome'];
+            $email = $pacienteData['email'];
+        }
+
+        $sql = "INSERT INTO contatos (nome, email, cpf, telefone, mensagem) 
+                VALUES (:nome, :email, :cpf, :telefone, :mensagem)";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':telefone', $telefone);
+        $stmt->bindParam(':mensagem', $mensagem);
+
+        $stmt->execute();
+
+        echo "Mensagem enviada com sucesso! Agradecemos seu contato.";
+
     }
 
 } catch (PDOException $e) {

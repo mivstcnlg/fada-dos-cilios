@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-  <!-- Header -->
   <header>
     <h1>Fada dos Cílios</h1>
 
@@ -45,6 +43,9 @@
     <form id="formContato" method="post">
       <input type="text" name="nome" placeholder="Seu Nome" required>
       <input type="email" name="email" placeholder="Seu Email" required>
+      <input type="text" name="cpf" placeholder="Seu CPF" maxlength="14" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+      <input type="text" name="telefone" placeholder="Seu Telefone" maxlength="15" required
+        pattern="\(\d{2}\) \d{5}-\d{4}">
       <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
       <button type="submit">Enviar Mensagem</button>
     </form>
@@ -83,6 +84,44 @@
           }
         });
       });
+    });
+
+    const cpfInput = document.querySelector('input[name="cpf"]');
+    cpfInput.addEventListener('input', function () {
+      let cpfValue = cpfInput.value.replace(/\D/g, '');
+      if (cpfValue.length <= 11) {
+        cpfValue = cpfValue.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      }
+      cpfInput.value = cpfValue;
+    });
+
+    const telefoneInput = document.querySelector('input[name="telefone"]');
+    telefoneInput.addEventListener('input', function () {
+      let telefoneValue = telefoneInput.value.replace(/\D/g, '');
+      if (telefoneValue.length <= 11) {
+        telefoneValue = telefoneValue.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+      }
+      telefoneInput.value = telefoneValue;
+    });
+
+    const form = document.getElementById('formContato');
+    form.addEventListener('submit', function (event) {
+      const cpf = cpfInput.value.replace(/\D/g, '');
+      const telefone = telefoneInput.value.replace(/\D/g, '');
+
+      const cpfValido = /^[0-9]{11}$/.test(cpf);
+      if (!cpfValido) {
+        alert('CPF inválido. Certifique-se de que está no formato correto (xxx.xxx.xxx-xx).');
+        event.preventDefault();
+        return;
+      }
+
+      const telefoneValido = /^[0-9]{11}$/.test(telefone);
+      if (!telefoneValido) {
+        alert('Telefone inválido. Certifique-se de que está no formato correto (xx xxxxx-xxxx).');
+        event.preventDefault();
+        return;
+      }
     });
   </script>
 
