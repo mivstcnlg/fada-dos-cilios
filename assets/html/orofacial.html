@@ -295,30 +295,30 @@
 
   <script>
     function formatCpf(cpfInput) {
-      let value = cpfInput.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
-      value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Adiciona o ponto após os 3 primeiros números
-      value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Adiciona o ponto após os próximos 3 números
-      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2"); // Adiciona o hífen antes dos 2 últimos números
-      cpfInput.value = value; // Atualiza o campo
+      let value = cpfInput.value.replace(/\D/g, "");
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+      cpfInput.value = value;
     }
 
     function formatPhone(telefoneInput) {
-      let value = telefoneInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-      value = value.replace(/(\d{2})(\d)/, "($1) $2"); // Formata o DDD
-      value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen após o 5º dígito
-      telefoneInput.value = value; // Atualiza o campo
+      let value = telefoneInput.value.replace(/\D/g, "");
+      value = value.replace(/(\d{2})(\d)/, "($1) $2");
+      value = value.replace(/(\d{5})(\d)/, "$1-$2");
+      telefoneInput.value = value;
     }
 
     function showSuccessPopup() {
-      alert("Formulário enviado com sucesso!"); // Exibe a mensagem de sucesso
+      alert("Formulário enviado com sucesso!");
     }
 
     function checkCpfExists(cpf) {
-      return localStorage.getItem(cpf) !== null; // Verifica se os dados do CPF já estão armazenados
+      return localStorage.getItem(cpf) !== null;
     }
 
     function fillFormWithData(cpf) {
-      const userData = JSON.parse(localStorage.getItem(cpf)); // Recupera os dados do CPF
+      const userData = JSON.parse(localStorage.getItem(cpf));
       document.getElementById("paciente").value = userData.paciente;
       document.getElementById("profissao").value = userData.profissao;
       document.getElementById("data-nascimento").value = userData.dataNascimento;
@@ -338,27 +338,38 @@
         endereco: document.getElementById("endereco").value,
         cidade: document.getElementById("cidade").value
       };
-      localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData)); // Armazena os dados no localStorage
+      localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
     }
 
-    function handleFormSubmit() {
-      const cpfInput = document.getElementById("cpf").value.replace(/\D/g, ""); // Limpa o CPF
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const cpfInput = document.getElementById("cpf").value.replace(/\D/g, "");
       if (!checkCpfExists(cpfInput)) {
-        saveFormData(); // Salva os dados se o CPF não existir
+        saveFormData();
       }
-      showSuccessPopup(); // Exibe a mensagem de sucesso
-      document.getElementById("form").submit(); // Submete o formulário
+      showSuccessPopup();
     }
 
     function handleCpfBlur() {
-      const cpfValue = document.getElementById("cpf").value.replace(/\D/g, ""); // Limpa o CPF
+      const cpfValue = document.getElementById("cpf").value.replace(/\D/g, "");
       if (checkCpfExists(cpfValue)) {
         alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
-        fillFormWithData(cpfValue); // Preenche os dados automaticamente
+        fillFormWithData(cpfValue);
       }
     }
-  </script>
 
+    window.onload = function () {
+      const cpfInput = document.getElementById("cpf");
+      const telefoneInput = document.getElementById("telefone");
+      cpfInput.oninput = () => formatCpf(cpfInput);
+      telefoneInput.oninput = () => formatPhone(telefoneInput);
+
+      cpfInput.onblur = handleCpfBlur;
+
+      const form = document.getElementById("form");
+      form.onsubmit = handleFormSubmit;
+    };
+  </script>
 </body>
 
 </html>
