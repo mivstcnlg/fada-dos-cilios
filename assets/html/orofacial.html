@@ -43,18 +43,22 @@
           <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="123.456.789-00"
             pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
         </div>
+
         <div class="form-group">
           <label for="paciente">Paciente:</label>
           <input type="text" id="paciente" name="paciente" required>
         </div>
+
         <div class="form-group">
           <label for="profissao">Profissão:</label>
           <input type="text" id="profissao" name="profissao" required>
         </div>
+
         <div class="form-group">
           <label for="data-nascimento">Data de Nascimento:</label>
           <input type="date" id="data-nascimento" name="data_nascimento" required>
         </div>
+
         <div class="form-group">
           <label>Sexo:</label>
           <div class="radio-group">
@@ -63,10 +67,12 @@
             <label><input type="radio" name="sexo" value="Outro" required> Outro</label>
           </div>
         </div>
+
         <div class="form-group">
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required>
         </div>
+
         <div class="form-group">
           <label for="cidade">Cidade:</label>
           <select id="cidade" name="cidade" required>
@@ -77,174 +83,203 @@
             <option value="Curitiba">Curitiba</option>
           </select>
         </div>
+
         <div class="form-group">
           <div class="form-group">
             <label for="telefone">Telefone:</label>
             <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
           </div>
+
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
           </div>
+
           <div class="form-group">
             <label for="indicado-por">Indicado por:</label>
             <input type="text" id="indicado-por" name="indicado_por">
           </div>
         </div>
+      </div>
 
-        <div class="form-section">
-          <h3>Contato de Emergência</h3>
-          <div class="form-group">
-            <label for="emergencia-nome">Nome:</label>
-            <input type="text" id="emergencia-nome" name="emergencia_nome" required>
-          </div>
-          <div class="form-group">
-            <label for="emergencia-telefone">Telefone/Celular:</label>
-            <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
+      <div class="form-section">
+        <h3>Questionário</h3>
+        <div class="form-group">
+          <label>01 - Já fez algum tipo de tratamento estético?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="tratamento_estetico" value="Não"> Não</label>
+            <label><input type="radio" name="tratamento_estetico" value="Sim"> Sim</label>
+            <label><input type="text" id="tipo-tratamento-estetico" name="tipo-tratamento-estetico"
+                placeholder="Especifique se aplicável"></label>
           </div>
         </div>
 
-        <div class="form-section">
-          <h3>Questionário</h3>
-          <div class="form-group">
-            <label>01 - Já fez algum tipo de tratamento estético?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="tratamento_estetico" value="Não"> Não</label>
-              <label><input type="radio" name="tratamento_estetico" value="Sim"> Sim</label>
-              <label><input type="text" id="tipo-tratamento-estetico" name="tipo-tratamento-estetico"
-                  placeholder="Especifique se aplicável"></label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>02 - Tem alergia a algum medicamento?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="alergia_medicamento" value="Não"> Não</label>
-              <label><input type="radio" name="alergia_medicamento" value="Sim"> Sim</label>
-              <input type="text" id="alergia-qual" name="alergia_qual" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>03 - Faz uso de algum medicamento?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="uso_medicamento" value="Não"> Não</label>
-              <label><input type="radio" name="uso_medicamento" value="Sim"> Sim</label>
-              <input type="text" id="medicamento-qual" name="medicamento_qual" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>04 - Fumante?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="fumante" value="Não"> Não</label>
-              <label><input type="radio" name="fumante" value="Sim"> Sim</label>
-              <input type="text" id="fumante-obs" name="fumante-obs" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>05 - Utiliza ou já utilizou ácido na pele?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="acido_pele" value="Não"> Não</label>
-              <label><input type="radio" name="acido_pele" value="Sim"> Sim</label>
-              <input type="text" id="acido-obs" name="acido-obs" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>06 - Está sob algum tipo de tratameto médico?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="tratamento_medico" value="Não"> Não</label>
-              <label><input type="radio" name="tratamento_medico" value="Sim"> Sim</label>
-              <input type="text" id="tratamento-med-qual" name="tratamento-med-qual"
-                placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>07 - Gestante</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="gestante" value="Não"> Não</label>
-              <label><input type="radio" name="gestante" value="Sim"> Sim</label>
-              <input type="text" id="tmp-gestacao" name="tmp-gestacao" placeholder="Especifique se aplicável">
-            </div>
-            <label>08 - Possui filhos?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="filhos" value="Não"> Não</label>
-              <label><input type="radio" name="filhos" value="Sim"> Sim</label>
-              <input type="text" id="qtd-filho" name="qtd-de-filhos" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>09 - Possui algum problema de coração?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="problema_coracao" value="Não"> Não</label>
-              <label><input type="radio" name="problema_coracao" value="Sim"> Sim</label>
-              <input type="text" id="coracao-qual" name="tratamento-med-qual" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>10 - Possui muita exposição ao Sol?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="exposicao_sol" value="Não"> Não</label>
-              <label><input type="radio" name="exposicao_sol" value="Sim"> Sim</label>
-              <input type="text" id="exposicao-sol-obs" name="exposicao-sol-obs" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>11 - Já teve algum tipo de câncer?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="cancer" value="Não"> Não</label>
-              <label><input type="radio" name="cancer" value="Sim"> Sim</label>
-              <input type="text" id="cancer-qual" name="cancer-qual" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>12 - Possui algum tipo de cuidado estético?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="cuidado_estetico" value="Não"> Não</label>
-              <label><input type="radio" name="cuidado_estetico" value="Sim"> Sim</label>
-              <input type="text" id="cuidado-qual" name="cuidado-qual" placeholder="Especifique se aplicável">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>13 - Possui intolerância a Lactose?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="intolerancia_lactose" value="Não"> Não</label>
-              <label><input type="radio" name="intolerancia_lactose" value="Sim"> Sim</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>14 - Possui diabete?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="diabetes" value="Não"> Não</label>
-              <label><input type="radio" name="diabetes" value="Sim"> Sim</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>15 - Possui alergia a proteina de ovo (Albumina)?</label>
-            <div class="checkbox-group">
-              <label><input type="radio" name="alergia_ovo" value="Não"> Não</label>
-              <label><input type="radio" name="alergia_ovo" value="Sim"> Sim</label>
-            </div>
+        <div class="form-group">
+          <label>02 - Tem alergia a algum medicamento?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="alergia_medicamento" value="Não"> Não</label>
+            <label><input type="radio" name="alergia_medicamento" value="Sim"> Sim</label>
+            <input type="text" id="alergia-qual" name="alergia_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
-        <div class="form-section">
-          <h3>Termo de Responsabilidade</h3>
-          <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
-          <div class="form-group">
-            <label for="data-termo">Data:</label>
-            <input type="date" id="data-termo" name="data_termo" required>
-          </div>
-          <div class="form-group">
-            <label for="assinatura">Assinatura do Paciente:</label>
-            <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
-          </div>
-          <div class="form-group">
-            <label for="termo-concordo">
-              <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
-              Declaro que li e concordo com as informações acima
-            </label>
+        <div class="form-group">
+          <label>03 - Faz uso de algum medicamento?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="uso_medicamento" value="Não"> Não</label>
+            <label><input type="radio" name="uso_medicamento" value="Sim"> Sim</label>
+            <input type="text" id="medicamento-qual" name="medicamento_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
-        <button type="submit" class="submit-btn">Enviar Formulário</button>
+        <div class="form-group">
+          <label>04 - Fumante?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="fumante" value="Não"> Não</label>
+            <label><input type="radio" name="fumante" value="Sim"> Sim</label>
+            <input type="text" id="fumante-obs" name="fumante-obs" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>05 - Utiliza ou já utilizou ácido na pele?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="acido_pele" value="Não"> Não</label>
+            <label><input type="radio" name="acido_pele" value="Sim"> Sim</label>
+            <input type="text" id="acido-obs" name="acido-obs" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>06 - Está sob algum tipo de tratameto médico?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="tratamento_medico" value="Não"> Não</label>
+            <label><input type="radio" name="tratamento_medico" value="Sim"> Sim</label>
+            <input type="text" id="tratamento-med-qual" name="tratamento-med-qual"
+              placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>07 - Gestante</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="gestante" value="Não"> Não</label>
+            <label><input type="radio" name="gestante" value="Sim"> Sim</label>
+            <input type="text" id="tmp-gestacao" name="tmp-gestacao" placeholder="Especifique se aplicável">
+          </div>
+
+          <label>08 - Possui filhos?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="filhos" value="Não"> Não</label>
+            <label><input type="radio" name="filhos" value="Sim"> Sim</label>
+            <input type="text" id="qtd-filho" name="qtd-de-filhos" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>09 - Possui algum problema de coração?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="problema_coracao" value="Não"> Não</label>
+            <label><input type="radio" name="problema_coracao" value="Sim"> Sim</label>
+            <input type="text" id="coracao-qual" name="tratamento-med-qual" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>10 - Possui muita exposição ao Sol?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="exposicao_sol" value="Não"> Não</label>
+            <label><input type="radio" name="exposicao_sol" value="Sim"> Sim</label>
+            <input type="text" id="exposicao-sol-obs" name="exposicao-sol-obs" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>11 - Já teve algum tipo de câncer?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="cancer" value="Não"> Não</label>
+            <label><input type="radio" name="cancer" value="Sim"> Sim</label>
+            <input type="text" id="cancer-qual" name="cancer-qual" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>12 - Possui algum tipo de cuidado estético?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="cuidado_estetico" value="Não"> Não</label>
+            <label><input type="radio" name="cuidado_estetico" value="Sim"> Sim</label>
+            <input type="text" id="cuidado-qual" name="cuidado-qual" placeholder="Especifique se aplicável">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>13 - Possui intolerância a Lactose?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="intolerancia_lactose" value="Não"> Não</label>
+            <label><input type="radio" name="intolerancia_lactose" value="Sim"> Sim</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>14 - Possui diabete?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="diabetes" value="Não"> Não</label>
+            <label><input type="radio" name="diabetes" value="Sim"> Sim</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>15 - Possui alergia a proteina de ovo (Albumina)?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="alergia_ovo" value="Não"> Não</label>
+            <label><input type="radio" name="alergia_ovo" value="Sim"> Sim</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Contato de Emergência</h3>
+        <div class="form-group">
+          <label for="emergencia-nome">Nome:</label>
+          <input type="text" id="emergencia-nome" name="emergencia_nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="emergencia-telefone">Telefone/Celular:</label>
+          <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3>Termo de Responsabilidade</h3>
+        <div class="form-group">
+          <label>Você se compromete a seguir as orientações pós-procedimento?</label>
+          <div class="checkbox-group">
+            <label><input type="radio" name="compromisso_orientacoes" value="Sim"> Sim</label>
+            <label><input type="radio" name="compromisso_orientacoes" value="Não"> Não</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="data-termo">Data:</label>
+          <input type="date" id="data-termo" name="data_termo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="assinatura">Assinatura do Paciente:</label>
+          <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
+        </div>
+        <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
+        <br>
+        <div class="form-group">
+          <label for="termo-concordo">
+            <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
+            Declaro que li e concordo com as informações acima
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Enviar Formulário</button>
     </form>
   </div>
 
@@ -322,29 +357,6 @@
         fillFormWithData(cpfValue); // Preenche os dados automaticamente
       }
     }
-
-    // Chamadas diretas das funções
-    window.onload = function () {
-      const cpfInput = document.getElementById("cpf");
-      const telefoneInput = document.getElementById("telefone");
-      cpfInput.oninput = () => formatCpf(cpfInput); // Formata o CPF enquanto digita
-      telefoneInput.oninput = () => formatPhone(telefoneInput); // Formata o telefone enquanto digita
-
-      const cpfValue = cpfInput.value.replace(/\D/g, "");
-      if (checkCpfExists(cpfValue)) {
-        fillFormWithData(cpfValue); // Preenche os dados automaticamente se o CPF já existir
-      }
-
-      // Submissão do formulário
-      const form = document.getElementById("form");
-      form.onsubmit = function (e) {
-        e.preventDefault(); // Previne o comportamento padrão de submit
-        handleFormSubmit(); // Executa a função de submissão personalizada
-      };
-
-      // Verificação do CPF no campo blur
-      cpfInput.onblur = handleCpfBlur; // Preenche os dados automaticamente quando perde o foco
-    };
   </script>
 
 </body>

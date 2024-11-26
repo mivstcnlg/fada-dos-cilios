@@ -223,7 +223,8 @@
           <label for="assinatura">Assinatura do Paciente:</label>
           <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
         </div>
-
+        <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
+        <br>
         <div class="form-group">
           <label for="termo-concordo">
             <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
@@ -310,29 +311,6 @@
         fillFormWithData(cpfValue); // Preenche os dados automaticamente
       }
     }
-
-    // Chamadas diretas das funções
-    window.onload = function () {
-      const cpfInput = document.getElementById("cpf");
-      const telefoneInput = document.getElementById("telefone");
-      cpfInput.oninput = () => formatCpf(cpfInput); // Formata o CPF enquanto digita
-      telefoneInput.oninput = () => formatPhone(telefoneInput); // Formata o telefone enquanto digita
-
-      const cpfValue = cpfInput.value.replace(/\D/g, "");
-      if (checkCpfExists(cpfValue)) {
-        fillFormWithData(cpfValue); // Preenche os dados automaticamente se o CPF já existir
-      }
-
-      // Submissão do formulário
-      const form = document.getElementById("form");
-      form.onsubmit = function (e) {
-        e.preventDefault(); // Previne o comportamento padrão de submit
-        handleFormSubmit(); // Executa a função de submissão personalizada
-      };
-
-      // Verificação do CPF no campo blur
-      cpfInput.onblur = handleCpfBlur; // Preenche os dados automaticamente quando perde o foco
-    };
   </script>
 
 
