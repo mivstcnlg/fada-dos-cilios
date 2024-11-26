@@ -160,6 +160,8 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="tratamento_oncologico" value="Não"> Não</label>
                         <label><input type="radio" name="tratamento_oncologico" value="Sim"> Sim</label>
+                        <input type="text" id="trat-ocular-qual" name="trat-ocular-qual"
+                            placeholder="Qual?">
                     </div>
                 </div>
                 <div class="form-group">
@@ -173,7 +175,12 @@
                 <div class="form-group">
                     <label>Existe algum problema que julgue ser necessário informar ao profissional antes do
                         procedimento?</label>
-                    <input type="text" id="informacao-extra" name="informacao-extra" placeholder="Especifique">
+                    <div class="checkbox-group">
+                        <label><input type="radio" name="info-extra" value="Não"> Não</label>
+                        <label><input type="radio" name="info-extra" value="Sim"> Sim</label>
+                        <input type="text" id="informacao-extra" name="informacao-extra" 
+                            placeholder="Especifique">
+                    </div>
                 </div>
             </div>
 
@@ -327,13 +334,15 @@
 
         function saveFormData() {
             const formData = {
-                paciente: document.getElementById("paciente").value,
-                profissao: document.getElementById("profissao").value,
-                dataNascimento: document.getElementById("data-nascimento").value,
-                telefone: document.getElementById("telefone").value,
-                email: document.getElementById("email").value,
-                endereco: document.getElementById("endereco").value,
-                cidade: document.getElementById("cidade").value
+            paciente: document.getElementById("paciente").value,
+            profissao: document.getElementById("profissao").value,
+            dataNascimento: document.getElementById("data-nascimento").value,
+            telefone: document.getElementById("telefone").value,
+            email: document.getElementById("email").value,
+            endereco: document.getElementById("endereco").value,
+            cidade: document.getElementById("cidade").value,
+            indicadoPor: document.getElementById("indicado-por").value, // Novo campo
+            sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
             };
             localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
         }

@@ -34,7 +34,7 @@
       buscando o equilíbrio entre as duas. A harmonização orofacial (HOF) é um conjunto de procedimentos que podem ser
       realizados em diferentes áreas da face, como lábios, dentes, gengivas, nariz e queixo.</p>
     <br></br>
-    <form action="orofacial.html" method="post">
+    <form id="form" action="orofacial.html" method="post">
 
       <div class="form-section">
         <h3>Informações Pessoais</h3>
@@ -330,16 +330,18 @@
 
     function saveFormData() {
       const formData = {
-        paciente: document.getElementById("paciente").value,
-        profissao: document.getElementById("profissao").value,
-        dataNascimento: document.getElementById("data-nascimento").value,
-        telefone: document.getElementById("telefone").value,
-        email: document.getElementById("email").value,
-        endereco: document.getElementById("endereco").value,
-        cidade: document.getElementById("cidade").value
-      };
-      localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
-    }
+      paciente: document.getElementById("paciente").value,
+      profissao: document.getElementById("profissao").value,
+      dataNascimento: document.getElementById("data-nascimento").value,
+      telefone: document.getElementById("telefone").value,
+      email: document.getElementById("email").value,
+      endereco: document.getElementById("endereco").value,
+      cidade: document.getElementById("cidade").value,
+      indicadoPor: document.getElementById("indicado-por").value, // Novo campo
+      sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
+    };
+    localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
+  }
 
     function handleFormSubmit(e) {
       e.preventDefault();

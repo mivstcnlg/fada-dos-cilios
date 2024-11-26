@@ -35,7 +35,7 @@
     <p>A hidrolipoclasia não aspirativa, também conhecida como hidrolipoclasia ultrassônica, é um procedimento estético
       que visa reduzir a gordura localizada e as medidas do corpo.</p>
     <br></br>
-    <form action="hidrolipo.html" method="post">
+    <form id="form" action="hidrolipo.html" method="post">
 
       <div class="form-section">
         <h3>Identificação</h3>
@@ -284,13 +284,15 @@
 
     function saveFormData() {
       const formData = {
-        paciente: document.getElementById("paciente").value,
-        profissao: document.getElementById("profissao").value,
-        dataNascimento: document.getElementById("data-nascimento").value,
-        telefone: document.getElementById("telefone").value,
-        email: document.getElementById("email").value,
-        endereco: document.getElementById("endereco").value,
-        cidade: document.getElementById("cidade").value
+      paciente: document.getElementById("paciente").value,
+      profissao: document.getElementById("profissao").value,
+      dataNascimento: document.getElementById("data-nascimento").value,
+      telefone: document.getElementById("telefone").value,
+      email: document.getElementById("email").value,
+      endereco: document.getElementById("endereco").value,
+      cidade: document.getElementById("cidade").value,
+      indicadoPor: document.getElementById("indicado-por").value, // Novo campo
+      sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
       };
       localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
     }
