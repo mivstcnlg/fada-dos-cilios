@@ -65,16 +65,6 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="estado-civil">Estado Civil:</label>
-          <select id="estado-civil" name="estado_civil" required>
-            <option value="">Selecione</option>
-            <option value="Solteiro(a)">Solteiro(a)</option>
-            <option value="Casado(a)">Casado(a)</option>
-            <option value="Divorciado(a)">Divorciado(a)</option>
-            <option value="Viúvo(a)">Viúvo(a)</option>
-          </select>
-        </div>
-        <div class="form-group">
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required>
         </div>
@@ -99,14 +89,6 @@
         <div class="form-group">
           <label for="indicado-por">Indicado por:</label>
           <input type="text" id="indicado-por" name="indicado_por">
-        </div>
-        <div class="form-group">
-          <label for="inicio-tratamento">Início do Tratamento:</label>
-          <input type="date" id="inicio-tratamento" name="inicio_tratamento">
-        </div>
-        <div class="form-group">
-          <label for="objetivo-consulta">Objetivo da Consulta:</label>
-          <textarea id="objetivo-consulta" name="objetivo_consulta" rows="4" required></textarea>
         </div>
       </div>
 
@@ -211,12 +193,11 @@
       </div>
 
       <div class="form-section">
-        <h3>Em caso de emergência avisar:</h3>
+        <h3>Contato de Emergência</h3>
         <div class="form-group">
           <label for="emergencia-nome">Nome:</label>
           <input type="text" id="emergencia-nome" name="emergencia_nome" required>
         </div>
-
         <div class="form-group">
           <label for="emergencia-telefone">Telefone/Celular:</label>
           <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
@@ -263,42 +244,97 @@
       <a href="#" aria-label="WhatsApp">WhatsApp</a>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script>
-    const cpfInput = document.getElementById("cpf");
-    cpfInput.addEventListener("input", () => {
-      let value = cpfInput.value.replace(/\D/g, "");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
-      cpfInput.value = value;
-    });
-
-    const telefoneInput = document.getElementById("telefone");
-    telefoneInput.addEventListener("input", () => {
-      let value = telefoneInput.value.replace(/\D/g, "");
-      value = value.replace(/(\d{2})(\d)/, "($1) $2");
-      value = value.replace(/(\d{5})(\d)/, "$1-$2");
-      telefoneInput.value = value;
-    });
-
-    function toggleAdditionalField(inputs, field) {
-      inputs.forEach(input => {
-        input.addEventListener("change", () => {
-          field.style.display = input.value === "Sim" && input.checked ? "block" : "none";
-        });
-      });
+    function formatCpf(cpfInput) {
+      let value = cpfInput.value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+      value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Adiciona o ponto após os 3 primeiros números
+      value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Adiciona o ponto após os próximos 3 números
+      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2"); // Adiciona o hífen antes dos 2 últimos números
+      cpfInput.value = value; // Atualiza o campo
     }
 
-    toggleAdditionalField(
-      document.getElementsByName("queixa-principal"),
-      document.getElementById("qp")
-    );
+    function formatPhone(telefoneInput) {
+      let value = telefoneInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+      value = value.replace(/(\d{2})(\d)/, "($1) $2"); // Formata o DDD
+      value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen após o 5º dígito
+      telefoneInput.value = value; // Atualiza o campo
+    }
 
-    toggleAdditionalField(
-      document.getElementsByName("medicamento_continuo"),
-      document.getElementById("medicamentos")
-    );
+    function showSuccessPopup() {
+      alert("Formulário enviado com sucesso!"); // Exibe a mensagem de sucesso
+    }
+
+    function checkCpfExists(cpf) {
+      return localStorage.getItem(cpf) !== null; // Verifica se os dados do CPF já estão armazenados
+    }
+
+    function fillFormWithData(cpf) {
+      const userData = JSON.parse(localStorage.getItem(cpf)); // Recupera os dados do CPF
+      document.getElementById("paciente").value = userData.paciente;
+      document.getElementById("profissao").value = userData.profissao;
+      document.getElementById("data-nascimento").value = userData.dataNascimento;
+      document.getElementById("telefone").value = userData.telefone;
+      document.getElementById("email").value = userData.email;
+      document.getElementById("endereco").value = userData.endereco;
+      document.getElementById("cidade").value = userData.cidade;
+    }
+
+    function saveFormData() {
+      const formData = {
+        paciente: document.getElementById("paciente").value,
+        profissao: document.getElementById("profissao").value,
+        dataNascimento: document.getElementById("data-nascimento").value,
+        telefone: document.getElementById("telefone").value,
+        email: document.getElementById("email").value,
+        endereco: document.getElementById("endereco").value,
+        cidade: document.getElementById("cidade").value
+      };
+      localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData)); // Armazena os dados no localStorage
+    }
+
+    function handleFormSubmit() {
+      const cpfInput = document.getElementById("cpf").value.replace(/\D/g, ""); // Limpa o CPF
+      if (!checkCpfExists(cpfInput)) {
+        saveFormData(); // Salva os dados se o CPF não existir
+      }
+      showSuccessPopup(); // Exibe a mensagem de sucesso
+      document.getElementById("form").submit(); // Submete o formulário
+    }
+
+    function handleCpfBlur() {
+      const cpfValue = document.getElementById("cpf").value.replace(/\D/g, ""); // Limpa o CPF
+      if (checkCpfExists(cpfValue)) {
+        alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
+        fillFormWithData(cpfValue); // Preenche os dados automaticamente
+      }
+    }
+
+    // Chamadas diretas das funções
+    window.onload = function () {
+      const cpfInput = document.getElementById("cpf");
+      const telefoneInput = document.getElementById("telefone");
+      cpfInput.oninput = () => formatCpf(cpfInput); // Formata o CPF enquanto digita
+      telefoneInput.oninput = () => formatPhone(telefoneInput); // Formata o telefone enquanto digita
+
+      const cpfValue = cpfInput.value.replace(/\D/g, "");
+      if (checkCpfExists(cpfValue)) {
+        fillFormWithData(cpfValue); // Preenche os dados automaticamente se o CPF já existir
+      }
+
+      // Submissão do formulário
+      const form = document.getElementById("form");
+      form.onsubmit = function (e) {
+        e.preventDefault(); // Previne o comportamento padrão de submit
+        handleFormSubmit(); // Executa a função de submissão personalizada
+      };
+
+      // Verificação do CPF no campo blur
+      cpfInput.onblur = handleCpfBlur; // Preenche os dados automaticamente quando perde o foco
+    };
   </script>
+
 
 </body>
 
