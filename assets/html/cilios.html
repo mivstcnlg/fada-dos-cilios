@@ -34,7 +34,7 @@
             colagem de fios sintéticos ou de seda nos cílios naturais, com o objetivo de dar mais volume, realce e
             definição ao olhar.</p>
         <br></br>
-        <form id="form" action="cilios.html" method="post">
+        <form id="formCilios" method="post">
             <div class="form-section">
                 <h3>Identificação</h3>
                 <div class="form-group">
@@ -44,15 +44,15 @@
                 </div>
                 <div class="form-group">
                     <label for="paciente">Paciente:</label>
-                    <input type="text" id="paciente" name="paciente" required>
+                    <input type="text" id="paciente" name="paciente" required placeholder="Digite o nome do paciente">
                 </div>
                 <div class="form-group">
                     <label for="profissao">Profissão:</label>
-                    <input type="text" id="profissao" name="profissao" required>
+                    <input type="text" id="profissao" name="profissao" required placeholder="Ex: Desenvolvedor">
                 </div>
                 <div class="form-group">
-                    <label for="data-nascimento">Data de Nascimento:</label>
-                    <input type="date" id="data-nascimento" name="data_nascimento" required>
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" required>
                 </div>
                 <div class="form-group">
                     <label>Sexo: </label>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" required>
+                    <input type="text" id="endereco" name="endereco" required placeholder="EX: Rua joao das flores, 436">
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade:</label>
@@ -83,11 +83,11 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required placeholder="teste@gmail.com">
                 </div>
                 <div class="form-group">
-                    <label for="indicado-por">Indicado por:</label>
-                    <input type="text" id="indicado-por" name="indicado_por">
+                    <label for="indicado_por">Indicado por:</label>
+                    <input type="text" id="indicado_por" name="indicado_por" required placeholder="Ex: Wilson" >
                 </div>
             </div>
 
@@ -105,7 +105,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="gestante" value="Não"> Não</label>
                         <label><input type="radio" name="gestante" value="Sim"> Sim</label>
-                        <input type="text" id="tmp-gestacao" name="tmp-gestacao" placeholder="Especifique">
+                        <input type="text" id="tmp_gestacao" name="tmp_gestacao" placeholder="Especifique">
                     </div>
                 </div>
                 <div class="form-group">
@@ -120,7 +120,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="alergias" value="Não"> Não</label>
                         <label><input type="radio" name="alergias" value="Sim"> Sim</label>
-                        <input type="text" id="alergiacilios-qual" name="alergiacilios_qual" placeholder="Especifique">
+                        <input type="text" id="alergiacilios_qual" name="alergiacilios_qual" placeholder="Especifique">
                     </div>
                 </div>
                 <div class="form-group">
@@ -135,7 +135,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="problema_respiratorio" value="Não"> Não</label>
                         <label><input type="radio" name="problema_respiratorio" value="Sim"> Sim</label>
-                        <input type="text" id="problema-respiratorio-qual" name="problema_respiratorio_qual"
+                        <input type="text" id="problema_respiratorio_qual" name="problema_respiratorio_qual"
                             placeholder="Especifique">
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="problema_ocular" value="Não"> Não</label>
                         <label><input type="radio" name="problema_ocular" value="Sim"> Sim</label>
-                        <input type="text" id="problema-ocular-qual" name="problema_ocular_qual"
+                        <input type="text" id="problema_ocular_qual" name="problema_ocular_qual"
                             placeholder="Especifique">
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="tratamento_oncologico" value="Não"> Não</label>
                         <label><input type="radio" name="tratamento_oncologico" value="Sim"> Sim</label>
-                        <input type="text" id="trat-ocular-qual" name="trat-ocular-qual"
+                        <input type="text" id="trat_ocular_qual" name="trat_ocular_qual"
                             placeholder="Qual?">
                     </div>
                 </div>
@@ -169,16 +169,16 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="dorme_lado" value="Não"> Não</label>
                         <label><input type="radio" name="dorme_lado" value="Sim"> Sim</label>
-                        <input type="text" id="dorme-lado-qual" name="dorme_lado_qual" placeholder="Qual?">
+                        <input type="text" id="dorme_lado_qual" name="dorme_lado_qual" placeholder="Qual?">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Existe algum problema que julgue ser necessário informar ao profissional antes do
                         procedimento?</label>
                     <div class="checkbox-group">
-                        <label><input type="radio" name="info-extra" value="Não"> Não</label>
-                        <label><input type="radio" name="info-extra" value="Sim"> Sim</label>
-                        <input type="text" id="informacao-extra" name="informacao-extra" 
+                        <label><input type="radio" name="info_extra" value="Não"> Não</label>
+                        <label><input type="radio" name="info_extra" value="Sim"> Sim</label>
+                        <input type="text" id="informacao_extra" name="informacao_extra" 
                             placeholder="Especifique">
                     </div>
                 </div>
@@ -232,9 +232,9 @@
                 <div class="form-group">
                     <label>Tintura:</label>
                     <div class="checkbox-group">
-                        <label for="tintura-sim"><input type="radio" id="tintura-sim" name="tintura" value="Sim">
+                        <label for="tintura-sim"><input type="radio" id="tintura_sim" name="tintura" value="Sim">
                             Sim</label>
-                        <label for="tintura-nao"><input type="radio" id="tintura-nao" name="tintura" value="Não">
+                        <label for="tintura-nao"><input type="radio" id="tintura_nao" name="tintura" value="Não">
                             Não</label>
                     </div>
                 </div>
@@ -246,12 +246,13 @@
             <div class="form-section">
                 <h3>Contato de Emergência</h3>
                 <div class="form-group">
-                    <label for="emergencia-nome">Nome:</label>
-                    <input type="text" id="emergencia-nome" name="emergencia_nome" required>
+                    <label for="emergencia_nome">Nome:</label>
+                    <input type="text" id="emergencia_nome" name="emergencia_nome" required placeholder="Informe o nome da pessoa para emergencia">
                 </div>
                 <div class="form-group">
-                    <label for="emergencia-telefone">Telefone/Celular:</label>
-                    <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
+                    <label for="emergencia_telefone">Telefone/Celular:</label>
+                    <input type="text" id="emergencia_telefone" name="emergencia_telefone" maxlength="15" required 
+                        placeholder="(XX) XXXXX-XXXX" oninput="formatarTelefoneEmergencia(this)">
                 </div>
             </div>
             <div class="form-section">
@@ -265,7 +266,7 @@
                 </div>
                 <div class="form-group">
                     <label for="data-termo">Data:</label>
-                    <input type="date" id="data-termo" name="data_termo" required>
+                    <input type="date" id="data_termo" name="data_termo" required>
                 </div>
 
                 <div class="form-group">
@@ -276,8 +277,8 @@
                 <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
                 <br>
                 <div class="form-group">
-                    <label for="termo-concordo">
-                        <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
+                    <label for="termo_concordo">
+                        <input type="checkbox" id="termo_concordo" name="termo_concordo" required>
                         Declaro que li e concordo com as informações acima
                     </label>
                 </div>
@@ -312,6 +313,12 @@
             value = value.replace(/(\d{5})(\d)/, "$1-$2");
             telefoneInput.value = value;
         }
+        function formatarTelefoneEmergencia(telefoneInput) {
+            let value = telefoneInput.value.replace(/\D/g, "");
+            value = value.replace(/(\d{2})(\d)/, "($1) $2");
+            value = value.replace(/(\d{5})(\d)/, "$1-$2");
+            telefoneInput.value = value;
+        }
 
         function showSuccessPopup() {
             alert("Formulário enviado com sucesso!");
@@ -325,7 +332,7 @@
             const userData = JSON.parse(localStorage.getItem(cpf));
             document.getElementById("paciente").value = userData.paciente;
             document.getElementById("profissao").value = userData.profissao;
-            document.getElementById("data-nascimento").value = userData.dataNascimento;
+            document.getElementById("data_nascimento").value = userData.dataNascimento;
             document.getElementById("telefone").value = userData.telefone;
             document.getElementById("email").value = userData.email;
             document.getElementById("endereco").value = userData.endereco;
@@ -336,13 +343,13 @@
             const formData = {
             paciente: document.getElementById("paciente").value,
             profissao: document.getElementById("profissao").value,
-            dataNascimento: document.getElementById("data-nascimento").value,
+            dataNascimento: document.getElementById("data_nascimento").value,
             telefone: document.getElementById("telefone").value,
             email: document.getElementById("email").value,
             endereco: document.getElementById("endereco").value,
             cidade: document.getElementById("cidade").value,
-            indicadoPor: document.getElementById("indicado-por").value, // Novo campo
-            sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
+            indicadoPor: document.getElementById("indicado_por").value,
+            sexo: document.querySelector('input[name="sexo"]:checked')?.value
             };
             localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
         }
@@ -352,8 +359,8 @@
             if (!checkCpfExists(cpfInput)) {
                 saveFormData();
             }
-            showSuccessPopup();
-            document.getElementById("form").submit();
+            
+            document.getElementById("formCilios").submit();
         }
 
         function handleCpfBlur() {
@@ -364,7 +371,26 @@
             }
         }
 
-        // Chamadas diretas das funções
+        $(document).ready(function () {
+      $('#formCilios').submit(function (event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+
+        $.ajax({
+          url: '/fada-dos-cilios/assets/php/processo_cilios.php',
+          type: 'POST',
+          data: formData,
+          success: function (response) {
+            showSuccessPopup();
+            $('#formCilios')[0].reset();
+          },
+          error: function () {
+            alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+          }
+        });
+      });
+    });
+
         window.onload = function () {
             const cpfInput = document.getElementById("cpf");
             const telefoneInput = document.getElementById("telefone");
@@ -375,15 +401,7 @@
             if (checkCpfExists(cpfValue)) {
                 fillFormWithData(cpfValue);
             }
-
-            // Submissão do formulário
-            const form = document.getElementById("form");
-            form.onsubmit = function (e) {
-                e.preventDefault();
-                handleFormSubmit();
-            };
-
-            // Verificação do CPF no campo blur
+           
             cpfInput.onblur = handleCpfBlur;
         };
     </script>

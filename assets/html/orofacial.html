@@ -34,7 +34,7 @@
       buscando o equilíbrio entre as duas. A harmonização orofacial (HOF) é um conjunto de procedimentos que podem ser
       realizados em diferentes áreas da face, como lábios, dentes, gengivas, nariz e queixo.</p>
     <br></br>
-    <form id="form" action="orofacial.html" method="post">
+    <form id="formOrofacial" method="post">
 
       <div class="form-section">
         <h3>Informações Pessoais</h3>
@@ -43,36 +43,30 @@
           <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="123.456.789-00"
             pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
         </div>
-
         <div class="form-group">
           <label for="paciente">Paciente:</label>
-          <input type="text" id="paciente" name="paciente" required>
+          <input type="text" id="paciente" name="paciente" required placeholder="Digite o nome do paciente">
         </div>
-
         <div class="form-group">
           <label for="profissao">Profissão:</label>
-          <input type="text" id="profissao" name="profissao" required>
+          <input type="text" id="profissao" name="profissao" required placeholder="Ex: Desenvolvedor">
         </div>
-
         <div class="form-group">
-          <label for="data-nascimento">Data de Nascimento:</label>
-          <input type="date" id="data-nascimento" name="data_nascimento" required>
+          <label for="data_nascimento">Data de Nascimento:</label>
+          <input type="date" id="data_nascimento" name="data_nascimento" required>
         </div>
-
         <div class="form-group">
-          <label>Sexo:</label>
+          <label>Sexo: </label>
           <div class="radio-group">
             <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
             <label><input type="radio" name="sexo" value="Feminino" required> Feminino</label>
             <label><input type="radio" name="sexo" value="Outro" required> Outro</label>
           </div>
         </div>
-
         <div class="form-group">
           <label for="endereco">Endereço:</label>
-          <input type="text" id="endereco" name="endereco" required>
+          <input type="text" id="endereco" name="endereco" required placeholder="EX: Rua joao das flores, 436">
         </div>
-
         <div class="form-group">
           <label for="cidade">Cidade:</label>
           <select id="cidade" name="cidade" required>
@@ -83,22 +77,17 @@
             <option value="Curitiba">Curitiba</option>
           </select>
         </div>
-
         <div class="form-group">
-          <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="indicado-por">Indicado por:</label>
-            <input type="text" id="indicado-por" name="indicado_por">
-          </div>
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="teste@gmail.com">
+        </div>
+        <div class="form-group">
+          <label for="indicado_por">Indicado por:</label>
+          <input type="text" id="indicado_por" name="indicado_por" required placeholder="Ex: Wilson">
         </div>
       </div>
 
@@ -109,7 +98,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="tratamento_estetico" value="Não"> Não</label>
             <label><input type="radio" name="tratamento_estetico" value="Sim"> Sim</label>
-            <label><input type="text" id="tipo-tratamento-estetico" name="tipo-tratamento-estetico"
+            <label><input type="text" id="tipo_tratamento_estetico" name="tipo_tratamento_estetico"
                 placeholder="Especifique se aplicável"></label>
           </div>
         </div>
@@ -119,7 +108,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="alergia_medicamento" value="Não"> Não</label>
             <label><input type="radio" name="alergia_medicamento" value="Sim"> Sim</label>
-            <input type="text" id="alergia-qual" name="alergia_qual" placeholder="Especifique se aplicável">
+            <input type="text" id="alergia_qual" name="alergia_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -128,7 +117,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="uso_medicamento" value="Não"> Não</label>
             <label><input type="radio" name="uso_medicamento" value="Sim"> Sim</label>
-            <input type="text" id="medicamento-qual" name="medicamento_qual" placeholder="Especifique se aplicável">
+            <input type="text" id="medicamento_qual" name="medicamento_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -137,7 +126,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="fumante" value="Não"> Não</label>
             <label><input type="radio" name="fumante" value="Sim"> Sim</label>
-            <input type="text" id="fumante-obs" name="fumante-obs" placeholder="Especifique se aplicável">
+            <input type="text" id="fumante_obs" name="fumante_obs" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -146,7 +135,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="acido_pele" value="Não"> Não</label>
             <label><input type="radio" name="acido_pele" value="Sim"> Sim</label>
-            <input type="text" id="acido-obs" name="acido-obs" placeholder="Especifique se aplicável">
+            <input type="text" id="acido_obs" name="acido_obs" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -155,7 +144,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="tratamento_medico" value="Não"> Não</label>
             <label><input type="radio" name="tratamento_medico" value="Sim"> Sim</label>
-            <input type="text" id="tratamento-med-qual" name="tratamento-med-qual"
+            <input type="text" id="tratamento_med_qual" name="tratamento_med_qual"
               placeholder="Especifique se aplicável">
           </div>
         </div>
@@ -165,14 +154,14 @@
           <div class="checkbox-group">
             <label><input type="radio" name="gestante" value="Não"> Não</label>
             <label><input type="radio" name="gestante" value="Sim"> Sim</label>
-            <input type="text" id="tmp-gestacao" name="tmp-gestacao" placeholder="Especifique se aplicável">
+            <input type="text" id="tmp_gestacao" name="tmp_gestacao" placeholder="Especifique se aplicável">
           </div>
 
           <label>08 - Possui filhos?</label>
           <div class="checkbox-group">
             <label><input type="radio" name="filhos" value="Não"> Não</label>
             <label><input type="radio" name="filhos" value="Sim"> Sim</label>
-            <input type="text" id="qtd-filho" name="qtd-de-filhos" placeholder="Especifique se aplicável">
+            <input type="text" id="qtd_de_filhos" name="qtd_de_filhos" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -181,7 +170,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="problema_coracao" value="Não"> Não</label>
             <label><input type="radio" name="problema_coracao" value="Sim"> Sim</label>
-            <input type="text" id="coracao-qual" name="tratamento-med-qual" placeholder="Especifique se aplicável">
+            <input type="text" id="problema_coracao_qual" name="problema_coracao_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -190,7 +179,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="exposicao_sol" value="Não"> Não</label>
             <label><input type="radio" name="exposicao_sol" value="Sim"> Sim</label>
-            <input type="text" id="exposicao-sol-obs" name="exposicao-sol-obs" placeholder="Especifique se aplicável">
+            <input type="text" id="exposicao_sol_obs" name="exposicao_sol_obs" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -199,7 +188,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="cancer" value="Não"> Não</label>
             <label><input type="radio" name="cancer" value="Sim"> Sim</label>
-            <input type="text" id="cancer-qual" name="cancer-qual" placeholder="Especifique se aplicável">
+            <input type="text" id="cancer_qual" name="cancer_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -208,7 +197,7 @@
           <div class="checkbox-group">
             <label><input type="radio" name="cuidado_estetico" value="Não"> Não</label>
             <label><input type="radio" name="cuidado_estetico" value="Sim"> Sim</label>
-            <input type="text" id="cuidado-qual" name="cuidado-qual" placeholder="Especifique se aplicável">
+            <input type="text" id="cuidado_qual" name="cuidado_qual" placeholder="Especifique se aplicável">
           </div>
         </div>
 
@@ -240,16 +229,17 @@
       <div class="form-section">
         <h3>Contato de Emergência</h3>
         <div class="form-group">
-          <label for="emergencia-nome">Nome:</label>
-          <input type="text" id="emergencia-nome" name="emergencia_nome" required>
+          <label for="emergencia_nome">Nome:</label>
+          <input type="text" id="emergencia_nome" name="emergencia_nome" required>
         </div>
 
         <div class="form-group">
-          <label for="emergencia-telefone">Telefone/Celular:</label>
-          <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
+          <label for="emergencia_telefone">Telefone/Celular:</label>
+          <input type="text" id="emergencia_telefone" name="emergencia_telefone" maxlength="15" required 
+            placeholder="(XX) XXXXX-XXXX" oninput="formatarTelefoneEmergencia(this)">>
         </div>
       </div>
-      
+
       <div class="form-section">
         <h3>Termo de Responsabilidade</h3>
         <div class="form-group">
@@ -259,10 +249,10 @@
             <label><input type="radio" name="compromisso_orientacoes" value="Não"> Não</label>
           </div>
         </div>
-        
+
         <div class="form-group">
-          <label for="data-termo">Data:</label>
-          <input type="date" id="data-termo" name="data_termo" required>
+          <label for="data_termo">Data:</label>
+          <input type="date" id="data_termo" name="data_termo" required>
         </div>
 
         <div class="form-group">
@@ -272,8 +262,8 @@
         <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
         <br>
         <div class="form-group">
-          <label for="termo-concordo">
-            <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
+          <label for="termo_concordo">
+            <input type="checkbox" id="termo_concordo" name="termo_concordo" required>
             Declaro que li e concordo com as informações acima
           </label>
         </div>
@@ -294,83 +284,112 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-    function formatCpf(cpfInput) {
-      let value = cpfInput.value.replace(/\D/g, "");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
-      cpfInput.value = value;
-    }
+      function formatCpf(cpfInput) {
+          let value = cpfInput.value.replace(/\D/g, "");
+          value = value.replace(/(\d{3})(\d)/, "$1.$2");
+          value = value.replace(/(\d{3})(\d)/, "$1.$2");
+          value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+          cpfInput.value = value;
+      }
 
-    function formatPhone(telefoneInput) {
+      function formatPhone(telefoneInput) {
+          let value = telefoneInput.value.replace(/\D/g, "");
+          value = value.replace(/(\d{2})(\d)/, "($1) $2");
+          value = value.replace(/(\d{5})(\d)/, "$1-$2");
+          telefoneInput.value = value;
+      }
+      
+      function formatarTelefoneEmergencia(telefoneInput) {
       let value = telefoneInput.value.replace(/\D/g, "");
       value = value.replace(/(\d{2})(\d)/, "($1) $2");
       value = value.replace(/(\d{5})(\d)/, "$1-$2");
       telefoneInput.value = value;
-    }
+    }      
 
-    function showSuccessPopup() {
-      alert("Formulário enviado com sucesso!");
-    }
-
-    function checkCpfExists(cpf) {
-      return localStorage.getItem(cpf) !== null;
-    }
-
-    function fillFormWithData(cpf) {
-      const userData = JSON.parse(localStorage.getItem(cpf));
-      document.getElementById("paciente").value = userData.paciente;
-      document.getElementById("profissao").value = userData.profissao;
-      document.getElementById("data-nascimento").value = userData.dataNascimento;
-      document.getElementById("telefone").value = userData.telefone;
-      document.getElementById("email").value = userData.email;
-      document.getElementById("endereco").value = userData.endereco;
-      document.getElementById("cidade").value = userData.cidade;
-    }
-
-    function saveFormData() {
-      const formData = {
-      paciente: document.getElementById("paciente").value,
-      profissao: document.getElementById("profissao").value,
-      dataNascimento: document.getElementById("data-nascimento").value,
-      telefone: document.getElementById("telefone").value,
-      email: document.getElementById("email").value,
-      endereco: document.getElementById("endereco").value,
-      cidade: document.getElementById("cidade").value,
-      indicadoPor: document.getElementById("indicado-por").value, // Novo campo
-      sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
-    };
-    localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
-  }
-
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const cpfInput = document.getElementById("cpf").value.replace(/\D/g, "");
-      if (!checkCpfExists(cpfInput)) {
-        saveFormData();
+      function showSuccessPopup() {
+          alert("Formulário enviado com sucesso!");
       }
-      showSuccessPopup();
-    }
 
-    function handleCpfBlur() {
-      const cpfValue = document.getElementById("cpf").value.replace(/\D/g, "");
-      if (checkCpfExists(cpfValue)) {
-        alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
-        fillFormWithData(cpfValue);
+      function checkCpfExists(cpf) {
+          return localStorage.getItem(cpf) !== null;
       }
-    }
 
-    window.onload = function () {
-      const cpfInput = document.getElementById("cpf");
-      const telefoneInput = document.getElementById("telefone");
-      cpfInput.oninput = () => formatCpf(cpfInput);
-      telefoneInput.oninput = () => formatPhone(telefoneInput);
+      function fillFormWithData(cpf) {
+          const userData = JSON.parse(localStorage.getItem(cpf));
+          document.getElementById("paciente").value = userData.paciente;
+          document.getElementById("profissao").value = userData.profissao;
+          document.getElementById("data_nascimento").value = userData.dataNascimento;
+          document.getElementById("telefone").value = userData.telefone;
+          document.getElementById("email").value = userData.email;
+          document.getElementById("endereco").value = userData.endereco;
+          document.getElementById("cidade").value = userData.cidade;
+      }
 
-      cpfInput.onblur = handleCpfBlur;
+      function saveFormData() {
+          const formData = {
+          paciente: document.getElementById("paciente").value,
+          profissao: document.getElementById("profissao").value,
+          dataNascimento: document.getElementById("data_nascimento").value,
+          telefone: document.getElementById("telefone").value,
+          email: document.getElementById("email").value,
+          endereco: document.getElementById("endereco").value,
+          cidade: document.getElementById("cidade").value,
+          indicadoPor: document.getElementById("indicado_por").value,
+          sexo: document.querySelector('input[name="sexo"]:checked')?.value
+          };
+          localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
+      }
 
-      const form = document.getElementById("form");
-      form.onsubmit = handleFormSubmit;
-    };
+      function handleFormSubmit() {
+          const cpfInput = document.getElementById("cpf").value.replace(/\D/g, "");
+          if (!checkCpfExists(cpfInput)) {
+              saveFormData();
+          }
+          
+          document.getElementById("formOrofacial").submit();
+      }
+
+      function handleCpfBlur() {
+          const cpfValue = document.getElementById("cpf").value.replace(/\D/g, "");
+          if (checkCpfExists(cpfValue)) {
+              alert("Este CPF já foi registrado. Os dados serão preenchidos automaticamente.");
+              fillFormWithData(cpfValue);
+          }
+      }
+
+      $(document).ready(function () {
+    $('#formOrofacial').submit(function (event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+
+      $.ajax({
+        url: '/fada-dos-cilios/assets/php/processo_orofacial.php',
+        type: 'POST',
+        data: formData,
+        success: function (response) {
+          showSuccessPopup();
+          $('#formOrofacial')[0].reset();
+        },
+        error: function () {
+          alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+        }
+      });
+    });
+  });
+
+      window.onload = function () {
+          const cpfInput = document.getElementById("cpf");
+          const telefoneInput = document.getElementById("telefone");
+          cpfInput.oninput = () => formatCpf(cpfInput);
+          telefoneInput.oninput = () => formatPhone(telefoneInput);
+
+          const cpfValue = cpfInput.value.replace(/\D/g, "");
+          if (checkCpfExists(cpfValue)) {
+              fillFormWithData(cpfValue);
+          }
+
+          cpfInput.onblur = handleCpfBlur;
+      };
   </script>
 </body>
 

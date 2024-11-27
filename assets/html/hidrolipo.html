@@ -35,206 +35,205 @@
     <p>A hidrolipoclasia não aspirativa, também conhecida como hidrolipoclasia ultrassônica, é um procedimento estético
       que visa reduzir a gordura localizada e as medidas do corpo.</p>
     <br></br>
-    <form id="form" action="hidrolipo.html" method="post">
+    <form id="formHidrolipo" method="post">
 
-      <div class="form-section">
-        <h3>Identificação</h3>
-        <div class="form-group">
-          <label for="cpf">CPF:</label>
-          <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="123.456.789-00"
-            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-        </div>
-        <div class="form-group">
-          <label for="paciente">Paciente:</label>
-          <input type="text" id="paciente" name="paciente" required>
-        </div>
-        <div class="form-group">
-          <label for="profissao">Profissão:</label>
-          <input type="text" id="profissao" name="profissao" required>
-        </div>
-        <div class="form-group">
-          <label for="data-nascimento">Data de Nascimento:</label>
-          <input type="date" id="data-nascimento" name="data_nascimento" required>
-        </div>
-        <div class="form-group">
-          <label>Sexo:</label>
-          <div class="radio-group">
-            <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
-            <label><input type="radio" name="sexo" value="Feminino" required> Feminino</label>
-            <label><input type="radio" name="sexo" value="Outro" required> Outro</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="endereco">Endereço:</label>
-          <input type="text" id="endereco" name="endereco" required>
-        </div>
-        <div class="form-group">
-          <label for="cidade">Cidade:</label>
-          <select id="cidade" name="cidade" required>
-            <option value="">Selecione</option>
-            <option value="São Paulo">São Paulo</option>
-            <option value="Rio de Janeiro">Rio de Janeiro</option>
-            <option value="Belo Horizonte">Belo Horizonte</option>
-            <option value="Curitiba">Curitiba</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="telefone">Telefone:</label>
-          <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="indicado-por">Indicado por:</label>
-          <input type="text" id="indicado-por" name="indicado_por">
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" maxlength="14" required placeholder="123.456.789-00"
+          pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+      </div>
+      <div class="form-group">
+        <label for="paciente">Paciente:</label>
+        <input type="text" id="paciente" name="paciente" required placeholder="Digite o nome do paciente">
+      </div>
+      <div class="form-group">
+        <label for="profissao">Profissão:</label>
+        <input type="text" id="profissao" name="profissao" required placeholder="Ex: Desenvolvedor">
+      </div>
+      <div class="form-group">
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+      </div>
+      <div class="form-group">
+        <label>Sexo: </label>
+        <div class="radio-group">
+          <label><input type="radio" name="sexo" value="Masculino" required> Masculino</label>
+          <label><input type="radio" name="sexo" value="Feminino" required> Feminino</label>
+          <label><input type="radio" name="sexo" value="Outro" required> Outro</label>
         </div>
       </div>
-
-      <div class="form-section">
-        <h3>Anamnese</h3>
-        <div class="form-group">
-          <label>QP (Queixa Principal):</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="queixa-principal" value="Não"> Não</label>
-            <label><input type="radio" name="queixa-principal" value="Sim"> Sim</label>
-            <input type="text" id="qp" name="qp" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Faz uso de medicamentos contiuo:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="medicamento_continuo" value="Não"> Não</label>
-            <label><input type="radio" name="medicamento_continuo" value="Sim"> Sim</label>
-            <input type="text" id="medicamentos" name="medicamentos" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>HF (Historico Familiar):</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="historico_familiar" value="Não"> Não</label>
-            <label><input type="radio" name="historico_familiar" value="Sim"> Sim</label>
-            <input type="text" id="hf" name="hf" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>HPP (Historico Pregressa Pessoal):</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="historico_pregressa_pessoal" value="Não"> Não</label>
-            <label><input type="radio" name="historico_pregressa_pessoal" value="Sim"> Sim</label>
-            <input type="text" id="hpp" name="hpp" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Antecedentes oncológico:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="oncologia" value="Não"> Não</label>
-            <label><input type="radio" name="oncologia" value="Sim"> Sim</label>
-            <input type="text" id="onco" name="onco" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Possui Diabete:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="diabete" value="Não"> Não</label>
-            <label><input type="radio" name="diabete" value="Sim"> Sim</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Hipertensão ou Hipotensão:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="hipotensao_hipotensao" value="Não"> Não</label>
-            <label><input type="radio" name="hipotensao_hipotensao" value="Sim"> Sim</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Problema Circulatório:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="problema-circular" value="Não"> Não</label>
-            <label><input type="radio" name="problema-circular" value="Sim"> Sim</label>
-            <input type="text" id="problema-circulatorio" name="problema-circulatorio" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Alergias:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="alergia-qual" value="Não"> Não</label>
-            <label><input type="radio" name="alergia-qual" value="Sim"> Sim</label>
-            <input type="text" id="alergias" name="alergias" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Gestante:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="tempo_gestante" value="Não"> Não</label>
-            <label><input type="radio" name="tempo_gestante" value="Sim"> Sim</label>
-            <input type="text" id="gestante" name="gestante" placeholder="Especifique">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Faz uso de anticoncepcional:</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="anticoncepcional" value="Não"> Não</label>
-            <label><input type="radio" name="anticoncepcional" value="Sim"> Sim</label>
-          </div>
-        </div>
-
+      <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required placeholder="EX: Rua joao das flores, 436">
       </div>
-
-      <div class="form-section">
-        <h3>Contato de Emergência</h3>
-        <div class="form-group">
-          <label for="emergencia-nome">Nome:</label>
-          <input type="text" id="emergencia-nome" name="emergencia_nome" required>
-        </div>
-        <div class="form-group">
-          <label for="emergencia-telefone">Telefone/Celular:</label>
-          <input type="text" id="emergencia-telefone" name="emergencia_telefone" required>
-        </div>
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <select id="cidade" name="cidade" required>
+          <option value="">Selecione</option>
+          <option value="São Paulo">São Paulo</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Belo Horizonte">Belo Horizonte</option>
+          <option value="Curitiba">Curitiba</option>
+        </select>
       </div>
-
-      <div class="form-section">
-        <h3>Termo de Responsabilidade</h3>
-        <div class="form-group">
-          <label>Você se compromete a seguir as orientações pós-procedimento?</label>
-          <div class="checkbox-group">
-            <label><input type="radio" name="compromisso_orientacoes" value="Sim"> Sim</label>
-            <label><input type="radio" name="compromisso_orientacoes" value="Não"> Não</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="data-termo">Data:</label>
-          <input type="date" id="data-termo" name="data_termo" required>
-        </div>
-
-        <div class="form-group">
-          <label for="assinatura">Assinatura do Paciente:</label>
-          <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
-        </div>
-        <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
-        <br>
-        <div class="form-group">
-          <label for="termo-concordo">
-            <input type="checkbox" id="termo-concordo" name="termo_concordo" required>
-            Declaro que li e concordo com as informações acima
-          </label>
-        </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" maxlength="15" required placeholder="(XX) XXXXX-XXXX">
       </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="teste@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="indicado_por">Indicado por:</label>
+        <input type="text" id="indicado_por" name="indicado_por" required placeholder="Ex: Wilson">
+      </div>
+  </div>
 
-      <button type="submit" class="submit-btn">Enviar Formulário</button>
-    </form>
+  <div class="form-section">
+    <h3>Anamnese</h3>
+    <div class="form-group">
+      <label>QP (Queixa Principal):</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="queixa_principal" value="Não"> Não</label>
+        <label><input type="radio" name="queixa_principal" value="Sim"> Sim</label>
+        <input type="text" id="qp" name="qp" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Faz uso de medicamentos contiuo:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="medicamento_continuo" value="Não"> Não</label>
+        <label><input type="radio" name="medicamento_continuo" value="Sim"> Sim</label>
+        <input type="text" id="medicamentos" name="medicamentos" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>HF (Historico Familiar):</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="historico_familiar" value="Não"> Não</label>
+        <label><input type="radio" name="historico_familiar" value="Sim"> Sim</label>
+        <input type="text" id="hf" name="hf" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>HPP (Historico Pregressa Pessoal):</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="historico_pregressa_pessoal" value="Não"> Não</label>
+        <label><input type="radio" name="historico_pregressa_pessoal" value="Sim"> Sim</label>
+        <input type="text" id="hpp" name="hpp" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Antecedentes oncológico:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="oncologia" value="Não"> Não</label>
+        <label><input type="radio" name="oncologia" value="Sim"> Sim</label>
+        <input type="text" id="onco" name="onco" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Possui Diabete:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="diabete" value="Não"> Não</label>
+        <label><input type="radio" name="diabete" value="Sim"> Sim</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Hipertensão ou Hipotensão:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="hipotensao_hipotensao" value="Não"> Não</label>
+        <label><input type="radio" name="hipotensao_hipotensao" value="Sim"> Sim</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Problema Circulatório:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="problema_circular" value="Não"> Não</label>
+        <label><input type="radio" name="problema_circular" value="Sim"> Sim</label>
+        <input type="text" id="problema_circulatorio" name="problema_circulatorio" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Alergias:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="alergia_qual" value="Não"> Não</label>
+        <label><input type="radio" name="alergia_qual" value="Sim"> Sim</label>
+        <input type="text" id="alergias" name="alergias" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Gestante:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="gestante" value="Não"> Não</label>
+        <label><input type="radio" name="gestante" value="Sim"> Sim</label>
+        <input type="text" id="tmp_gestacao" name="tmp_gestacao" placeholder="Especifique">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Faz uso de anticoncepcional:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="anticoncepcional" value="Não"> Não</label>
+        <label><input type="radio" name="anticoncepcional" value="Sim"> Sim</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-section">
+    <h3>Contato de Emergência</h3>
+    <div class="form-group">
+      <label for="emergencia_nome">Nome:</label>
+      <input type="text" id="emergencia_nome" name="emergencia_nome" required>
+    </div>
+    <div class="form-group">
+      <label for="emergencia_telefone">Telefone/Celular:</label>
+      <input type="text" id="emergencia_telefone" name="emergencia_telefone" maxlength="15" required 
+        placeholder="(XX) XXXXX-XXXX" oninput="formatarTelefoneEmergencia(this)">
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h3>Termo de Responsabilidade</h3>
+    <div class="form-group">
+      <label>Você se compromete a seguir as orientações pós-procedimento?</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="compromisso_orientacoes" value="Sim"> Sim</label>
+        <label><input type="radio" name="compromisso_orientacoes" value="Não"> Não</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="data_termo">Data:</label>
+      <input type="date" id="data_termo" name="data_termo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="assinatura">Assinatura do Paciente:</label>
+      <input type="text" id="assinatura" name="assinatura" required placeholder="Digite seu nome completo">
+    </div>
+    <p>Estou ciente e de acordo com todas as informações acima relacionadas.</p>
+    <br>
+    <div class="form-group">
+      <label for="termo_concordo">
+        <input type="checkbox" id="termo_concordo" name="termo_concordo" required>
+        Declaro que li e concordo com as informações acima
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">Enviar Formulário</button>
+  </form>
   </div>
 
   <footer>
@@ -262,6 +261,14 @@
       value = value.replace(/(\d{5})(\d)/, "$1-$2");
       telefoneInput.value = value;
     }
+    
+    function formatarTelefoneEmergencia(telefoneInput) {
+      let value = telefoneInput.value.replace(/\D/g, "");
+      value = value.replace(/(\d{2})(\d)/, "($1) $2");
+      value = value.replace(/(\d{5})(\d)/, "$1-$2");
+      telefoneInput.value = value;
+    }
+
 
     function showSuccessPopup() {
       alert("Formulário enviado com sucesso!");
@@ -275,7 +282,7 @@
       const userData = JSON.parse(localStorage.getItem(cpf));
       document.getElementById("paciente").value = userData.paciente;
       document.getElementById("profissao").value = userData.profissao;
-      document.getElementById("data-nascimento").value = userData.dataNascimento;
+      document.getElementById("data_nascimento").value = userData.dataNascimento;
       document.getElementById("telefone").value = userData.telefone;
       document.getElementById("email").value = userData.email;
       document.getElementById("endereco").value = userData.endereco;
@@ -284,26 +291,25 @@
 
     function saveFormData() {
       const formData = {
-      paciente: document.getElementById("paciente").value,
-      profissao: document.getElementById("profissao").value,
-      dataNascimento: document.getElementById("data-nascimento").value,
-      telefone: document.getElementById("telefone").value,
-      email: document.getElementById("email").value,
-      endereco: document.getElementById("endereco").value,
-      cidade: document.getElementById("cidade").value,
-      indicadoPor: document.getElementById("indicado-por").value, // Novo campo
-      sexo: document.querySelector('input[name="sexo"]:checked')?.value // Seleção de rádio
+        paciente: document.getElementById("paciente").value,
+        profissao: document.getElementById("profissao").value,
+        dataNascimento: document.getElementById("data_nascimento").value,
+        telefone: document.getElementById("telefone").value,
+        email: document.getElementById("email").value,
+        endereco: document.getElementById("endereco").value,
+        cidade: document.getElementById("cidade").value,
+        indicadoPor: document.getElementById("indicado_por").value,
+        sexo: document.querySelector('input[name="sexo"]:checked')?.value
       };
       localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
     }
 
-    function handleFormSubmit(e) {
-      e.preventDefault();
+    function handleFormSubmit() {
       const cpfInput = document.getElementById("cpf").value.replace(/\D/g, "");
       if (!checkCpfExists(cpfInput)) {
         saveFormData();
       }
-      showSuccessPopup();
+      document.getElementById("formHidrolipo").submit();
     }
 
     function handleCpfBlur() {
@@ -314,16 +320,38 @@
       }
     }
 
+    $(document).ready(function () {
+      $('#formHidrolipo').submit(function (event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+
+        $.ajax({
+          url: '/fada-dos-cilios/assets/php/processo_hidrolipo.php',
+          type: 'POST',
+          data: formData,
+          success: function (response) {
+            showSuccessPopup();
+            $('#formCilios')[0].reset();
+          },
+          error: function () {
+            alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+          }
+        });
+      });
+    });
+
     window.onload = function () {
       const cpfInput = document.getElementById("cpf");
       const telefoneInput = document.getElementById("telefone");
       cpfInput.oninput = () => formatCpf(cpfInput);
       telefoneInput.oninput = () => formatPhone(telefoneInput);
 
-      cpfInput.onblur = handleCpfBlur;
+      const cpfValue = cpfInput.value.replace(/\D/g, "");
+      if (checkCpfExists(cpfValue)) {
+        fillFormWithData(cpfValue);
+      }
 
-      const form = document.getElementById("form");
-      form.onsubmit = handleFormSubmit;
+      cpfInput.onblur = handleCpfBlur;
     };
   </script>
 

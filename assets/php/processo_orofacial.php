@@ -1,5 +1,8 @@
 <?php
-include 'conexao.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fada_dos_cilios";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
