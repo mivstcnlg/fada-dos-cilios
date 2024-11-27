@@ -236,7 +236,7 @@
         <div class="form-group">
           <label for="emergencia_telefone">Telefone/Celular:</label>
           <input type="text" id="emergencia_telefone" name="emergencia_telefone" maxlength="15" required 
-            placeholder="(XX) XXXXX-XXXX" oninput="formatarTelefoneEmergencia(this)">>
+            placeholder="(XX) XXXXX-XXXX" oninput="formatarTelefoneEmergencia(this)">
         </div>
       </div>
 
@@ -298,7 +298,7 @@
           value = value.replace(/(\d{5})(\d)/, "$1-$2");
           telefoneInput.value = value;
       }
-      
+
       function formatarTelefoneEmergencia(telefoneInput) {
       let value = telefoneInput.value.replace(/\D/g, "");
       value = value.replace(/(\d{2})(\d)/, "($1) $2");

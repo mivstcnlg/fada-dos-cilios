@@ -4,52 +4,125 @@ $username = "root";
 $password = "";
 $dbname = "fada_dos_cilios";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+try {
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $cpf = $_POST['cpf'];
+        $paciente = htmlspecialchars($_POST['paciente']);
+        $profissao = htmlspecialchars($_POST['profissao']);
+        $data_nascimento = htmlspecialchars($_POST['data_nascimento']);
+        $sexo = $_POST['sexo'];
+        $endereco = htmlspecialchars($_POST['endereco']);
+        $cidade = htmlspecialchars($_POST['cidade']);
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $indicado_por = htmlspecialchars($_POST['indicado_por']);
+        $tratamento_estetico = $_POST['tratamento_estetico'];
+        $tipo_tratamento_estetico = htmlspecialchars($_POST['tipo_tratamento_estetico']);
+        $alergia_medicamento = $_POST['alergia_medicamento'];
+        $alergia_qual = htmlspecialchars($_POST['alergia_qual']);
+        $uso_medicamento = $_POST['uso_medicamento'];
+        $medicamento_qual = htmlspecialchars($_POST['medicamento_qual']);
+        $fumante = $_POST['fumante'];
+        $fumante_obs = htmlspecialchars($_POST['fumante_obs']);
+        $acido_pele = $_POST['acido_pele'];
+        $acido_obs = htmlspecialchars($_POST['acido_obs']);
+        $tratamento_medico = $_POST['tratamento_medico'];
+        $tratamento_med_qual = htmlspecialchars($_POST['tratamento_med_qual']);
+        $gestante = $_POST['gestante'];
+        $tmp_gestacao = htmlspecialchars($_POST['tmp_gestacao']);
+        $filhos = $_POST['filhos'];
+        $qtd_de_filhos = htmlspecialchars($_POST['qtd_de_filhos']);
+        $problema_coracao = $_POST['problema_coracao'];
+        $problema_coracao_qual = htmlspecialchars($_POST['problema_coracao_qual']);
+        $exposicao_sol = $_POST['exposicao_sol'];
+        $exposicao_sol_obs = htmlspecialchars($_POST['exposicao_sol_obs']);
+        $cancer = $_POST['cancer'];
+        $cancer_qual = htmlspecialchars($_POST['cancer_qual']);
+        $cuidado_estetico = $_POST['cuidado_estetico'];
+        $cuidado_qual = htmlspecialchars($_POST['cuidado_qual']);
+        $intolerancia_lactose = $_POST['intolerancia_lactose'];
+        $diabetes = $_POST['diabetes'];
+        $alergia_ovo = $_POST['alergia_ovo'];
+        $emergencia_nome = $_POST['emergencia_nome'];
+        $emergencia_telefone = $_POST['emergencia_telefone'];
+        $compromisso_orientacoes = $_POST['compromisso_orientacoes'];
+        $data_termo = $_POST['data_termo'];
+        $assinatura = $_POST['assinatura'];
+        $termo_concordo = $_POST['termo_concordo'];
 
-    $paciente_id = $_POST['paciente_id'];
-    $nome_emergencia = $_POST['nome_emergencia'];
-    $telefone_emergencia = $_POST['telefone_emergencia'];
-    $tratamento_estetico = isset($_POST['tratamento_estetico']) ? 1 : 0;
-    $tipo_tratamento_estetico = $_POST['tipo_tratamento_estetico'];
-    $alergia_medicamento = isset($_POST['alergia_medicamento']) ? 1 : 0;
-    $alergia_medicamento_qual = $_POST['alergia_medicamento_qual'];
-    $medicamento = isset($_POST['medicamento']) ? 1 : 0;
-    $medicamento_qual = $_POST['medicamento_qual'];
-    $fumante = isset($_POST['fumante']) ? 1 : 0;
-    $fumante_tempo = $_POST['fumante_tempo'];
-    $uso_acido = isset($_POST['uso_acido']) ? 1 : 0;
-    $tipo_acido_usado = $_POST['tipo_acido_usado'];
-    $tratamento_medico = isset($_POST['tratamento_medico']) ? 1 : 0;
-    $tipo_tratamento_medico = $_POST['tipo_tratamento_medico'];
-    $gestante = isset($_POST['gestante']) ? 1 : 0;
-    $tempo_gestacao = $_POST['tempo_gestacao'];
-    $filhos = isset($_POST['filhos']) ? 1 : 0;
-    $quantidade_filhos = $_POST['quantidade_filhos'];
-    $problema_cardiaco = isset($_POST['problema_cardiaco']) ? 1 : 0;
-    $tipo_problema_cardiaco = $_POST['tipo_problema_cardiaco'];
-    $exposicao_sol = isset($_POST['exposicao_sol']) ? 1 : 0;
-    $tempo_exposicao_sol = $_POST['tempo_exposicao_sol'];
-    $cancer = isset($_POST['cancer']) ? 1 : 0;
-    $tipo_cancer = $_POST['tipo_cancer'];
-    $intolerancia_lactose = isset($_POST['intolerancia_lactose']) ? 1 : 0;
-    $diabete = isset($_POST['diabete']) ? 1 : 0;
-    $alergia_ovo = isset($_POST['alergia_ovo']) ? 1 : 0;
-    $data_tempo = $_POST['data_tempo'];
-    $assinatura = $_POST['assinatura'];
-    $termo_acordado = isset($_POST['termo_acordado']) ? 1 : 0;
+        $sql = "INSERT INTO anamnese_orofacial 
+            (cpf, paciente, profissao, data_nascimento, sexo, endereco, cidade, telefone, email, indicado_por, 
+            tratamento_estetico, tipo_tratamento_estetico, alergia_medicamento, alergia_qual, uso_medicamento, 
+            medicamento_qual, fumante, fumante_obs, acido_pele, acido_obs, tratamento_medico, tratamento_med_qual, 
+            gestante, tmp_gestacao, filhos, qtd_de_filhos, problema_coracao, problema_coracao_qual, exposicao_sol, 
+            exposicao_sol_obs, cancer, cancer_qual, cuidado_estetico, cuidado_qual, intolerancia_lactose, diabetes, 
+            alergia_ovo, emergencia_nome, emergencia_telefone, compromisso_orientacoes, data_termo, assinatura, 
+            termo_concordo) 
+            VALUES 
+            (:cpf, :paciente, :profissao, :data_nascimento, :sexo, :endereco, :cidade, :telefone, :email, :indicado_por, 
+            :tratamento_estetico, :tipo_tratamento_estetico, :alergia_medicamento, :alergia_qual, :uso_medicamento, 
+            :medicamento_qual, :fumante, :fumante_obs, :acido_pele, :acido_obs, :tratamento_medico, :tratamento_med_qual, 
+            :gestante, :tmp_gestacao, :filhos, :qtd_de_filhos, :problema_coracao, :problema_coracao_qual, :exposicao_sol, 
+            :exposicao_sol_obs, :cancer, :cancer_qual, :cuidado_estetico, :cuidado_qual, :intolerancia_lactose, :diabetes, 
+            :alergia_ovo, :emergencia_nome, :emergencia_telefone, :compromisso_orientacoes, :data_termo, :assinatura, 
+            :termo_concordo)";
 
-    $sql = "INSERT INTO formulario_orofacial (paciente_id, nome_emergencia, telefone_emergencia, tratamento_estetico, tipo_tratamento_estetico, alergia_medicamento, alergia_medicamento_qual, medicamento, medicamento_qual, fumante, fumante_tempo, uso_acido, tipo_acido_usado, tratamento_medico, tipo_tratamento_medico, gestante, tempo_gestacao, filhos, quantidade_filhos, problema_cardiaco, tipo_problema_cardiaco, exposicao_sol, tempo_exposicao_sol, cancer, tipo_cancer, intolerancia_lactose, diabete, alergia_ovo, data_tempo, assinatura, termo_acordado)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $pdo->prepare($sql);
 
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("isssssssiissssssiiissssssssi", $paciente_id, $nome_emergencia, $telefone_emergencia, $tratamento_estetico, $tipo_tratamento_estetico, $alergia_medicamento, $alergia_medicamento_qual, $medicamento, $medicamento_qual, $fumante, $fumante_tempo, $uso_acido, $tipo_acido_usado, $tratamento_medico, $tipo_tratamento_medico, $gestante, $tempo_gestacao, $filhos, $quantidade_filhos, $problema_cardiaco, $tipo_problema_cardiaco, $exposicao_sol, $tempo_exposicao_sol, $cancer, $tipo_cancer, $intolerancia_lactose, $diabete, $alergia_ovo, $data_tempo, $assinatura, $termo_acordado);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':paciente', $paciente);
+        $stmt->bindParam(':profissao', $profissao);
+        $stmt->bindParam(':data_nascimento', $data_nascimento);
+        $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':endereco', $endereco);
+        $stmt->bindParam(':cidade', $cidade);
+        $stmt->bindParam(':telefone', $telefone);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':indicado_por', $indicado_por);
+        $stmt->bindParam(':tratamento_estetico', $tratamento_estetico);
+        $stmt->bindParam(':tipo_tratamento_estetico', $tipo_tratamento_estetico);
+        $stmt->bindParam(':alergia_medicamento', $alergia_medicamento);
+        $stmt->bindParam(':alergia_qual', $alergia_qual);
+        $stmt->bindParam(':uso_medicamento', $uso_medicamento);
+        $stmt->bindParam(':medicamento_qual', $medicamento_qual);
+        $stmt->bindParam(':fumante', $fumante);
+        $stmt->bindParam(':fumante_obs', $fumante_obs);
+        $stmt->bindParam(':acido_pele', $acido_pele);
+        $stmt->bindParam(':acido_obs', $acido_obs);
+        $stmt->bindParam(':tratamento_medico', $tratamento_medico);
+        $stmt->bindParam(':tratamento_med_qual', $tratamento_med_qual);
+        $stmt->bindParam(':gestante', $gestante);
+        $stmt->bindParam(':tmp_gestacao', $tmp_gestacao);
+        $stmt->bindParam(':filhos', $filhos);
+        $stmt->bindParam(':qtd_de_filhos', $qtd_de_filhos);
+        $stmt->bindParam(':problema_coracao', $problema_coracao);
+        $stmt->bindParam(':problema_coracao_qual', $problema_coracao_qual);
+        $stmt->bindParam(':exposicao_sol', $exposicao_sol);
+        $stmt->bindParam(':exposicao_sol_obs', $exposicao_sol_obs);
+        $stmt->bindParam(':cancer', $cancer);
+        $stmt->bindParam(':cancer_qual', $cancer_qual);
+        $stmt->bindParam(':cuidado_estetico', $cuidado_estetico);
+        $stmt->bindParam(':cuidado_qual', $cuidado_qual);
+        $stmt->bindParam(':intolerancia_lactose', $intolerancia_lactose);
+        $stmt->bindParam(':diabetes', $diabetes);
+        $stmt->bindParam(':alergia_ovo', $alergia_ovo);
+        $stmt->bindParam(':emergencia_nome', $emergencia_nome);
+        $stmt->bindParam(':emergencia_telefone', $emergencia_telefone);
+        $stmt->bindParam(':compromisso_orientacoes', $compromisso_orientacoes);
+        $stmt->bindParam(':data_termo', $data_termo);
+        $stmt->bindParam(':assinatura', $assinatura);
+        $stmt->bindParam(':termo_concordo', $termo_concordo);
 
         $stmt->execute();
-        echo "Dados salvos com sucesso!";
-    } else {
-        echo "Erro ao salvar os dados: " . $conn->error;
+
+        echo "Dados inseridos com sucesso!";
+
     }
 
-    $stmt->close();
+} catch (PDOException $e) {
+    echo "Erro: " . $e->getMessage();
 }
 ?>

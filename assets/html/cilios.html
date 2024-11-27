@@ -186,12 +186,17 @@
 
             <div class="form-section">
                 <h3>Ficha Técnica:</h3>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="tipo" value="Fio"> Fio a Fio</label>
-                    <label><input type="checkbox" name="tipo" value="Volume Russo"> Volume Russo</label>
-                    <label><input type="checkbox" name="tipo" value="Hibrido"> Hibrido</label>
-                    <label><input type="checkbox" name="tipo" value="Megavolume"> Megavolume</label>
+                <div class="select-group">
+                    <label for="tipo">Selecione o Tipo:</label>
+                    <select name="tipo" id="tipo" required>
+                        <option value="">Selecione</option>
+                        <option value="Fio">Fio a Fio</option>
+                        <option value="Volume Russo">Volume Russo</option>
+                        <option value="Hibrido">Hibrido</option>
+                        <option value="Megavolume">Megavolume</option>
+                    </select>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="mapping">Mapping:</label>
                     <input type="text" id="mapping" name="mapping" required>
