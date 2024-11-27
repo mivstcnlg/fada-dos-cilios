@@ -64,7 +64,8 @@
                 </div>
                 <div class="form-group">
                     <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" required placeholder="EX: Rua joao das flores, 436">
+                    <input type="text" id="endereco" name="endereco" required
+                        placeholder="EX: Rua joao das flores, 436">
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade:</label>
@@ -87,7 +88,7 @@
                 </div>
                 <div class="form-group">
                     <label for="indicado_por">Indicado por:</label>
-                    <input type="text" id="indicado_por" name="indicado_por" required placeholder="Ex: Wilson" >
+                    <input type="text" id="indicado_por" name="indicado_por" required placeholder="Ex: Wilson">
                 </div>
             </div>
 
@@ -160,8 +161,7 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="tratamento_oncologico" value="Não"> Não</label>
                         <label><input type="radio" name="tratamento_oncologico" value="Sim"> Sim</label>
-                        <input type="text" id="trat_ocular_qual" name="trat_ocular_qual"
-                            placeholder="Qual?">
+                        <input type="text" id="trat_ocular_qual" name="trat_ocular_qual" placeholder="Qual?">
                     </div>
                 </div>
                 <div class="form-group">
@@ -178,17 +178,12 @@
                     <div class="checkbox-group">
                         <label><input type="radio" name="info_extra" value="Não"> Não</label>
                         <label><input type="radio" name="info_extra" value="Sim"> Sim</label>
-                        <input type="text" id="informacao_extra" name="informacao_extra" 
-                            placeholder="Especifique">
+                        <input type="text" id="informacao_extra" name="informacao_extra" placeholder="Especifique">
                     </div>
                 </div>
-            </div>
-
-            <div class="form-section">
-                <h3>Ficha Técnica:</h3>
-                <div class="select-group">
-                    <label for="tipo">Selecione o Tipo:</label>
-                    <select name="tipo" id="tipo" required>
+                <div class="form-group">
+                    <label for="tipo">Selecione o Tipo de procedimento:</label>
+                    <select id="tipo" name="cidade" required>
                         <option value="">Selecione</option>
                         <option value="Fio">Fio a Fio</option>
                         <option value="Volume Russo">Volume Russo</option>
@@ -346,15 +341,15 @@
 
         function saveFormData() {
             const formData = {
-            paciente: document.getElementById("paciente").value,
-            profissao: document.getElementById("profissao").value,
-            dataNascimento: document.getElementById("data_nascimento").value,
-            telefone: document.getElementById("telefone").value,
-            email: document.getElementById("email").value,
-            endereco: document.getElementById("endereco").value,
-            cidade: document.getElementById("cidade").value,
-            indicadoPor: document.getElementById("indicado_por").value,
-            sexo: document.querySelector('input[name="sexo"]:checked')?.value
+                paciente: document.getElementById("paciente").value,
+                profissao: document.getElementById("profissao").value,
+                dataNascimento: document.getElementById("data_nascimento").value,
+                telefone: document.getElementById("telefone").value,
+                email: document.getElementById("email").value,
+                endereco: document.getElementById("endereco").value,
+                cidade: document.getElementById("cidade").value,
+                indicadoPor: document.getElementById("indicado_por").value,
+                sexo: document.querySelector('input[name="sexo"]:checked')?.value
             };
             localStorage.setItem(document.getElementById("cpf").value.replace(/\D/g, ""), JSON.stringify(formData));
         }
@@ -364,7 +359,7 @@
             if (!checkCpfExists(cpfInput)) {
                 saveFormData();
             }
-            
+
             document.getElementById("formCilios").submit();
         }
 
@@ -377,24 +372,24 @@
         }
 
         $(document).ready(function () {
-      $('#formCilios').submit(function (event) {
-        event.preventDefault();
-        var formData = $(this).serialize();
+            $('#formCilios').submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
 
-        $.ajax({
-          url: '/fada-dos-cilios/assets/php/processo_cilios.php',
-          type: 'POST',
-          data: formData,
-          success: function (response) {
-            showSuccessPopup();
-            $('#formCilios')[0].reset();
-          },
-          error: function () {
-            alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
-          }
+                $.ajax({
+                    url: '/fada-dos-cilios/assets/php/processo_cilios.php',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        showSuccessPopup();
+                        $('#formCilios')[0].reset();
+                    },
+                    error: function () {
+                        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+                    }
+                });
+            });
         });
-      });
-    });
 
         window.onload = function () {
             const cpfInput = document.getElementById("cpf");
@@ -406,7 +401,7 @@
             if (checkCpfExists(cpfValue)) {
                 fillFormWithData(cpfValue);
             }
-           
+
             cpfInput.onblur = handleCpfBlur;
         };
     </script>
