@@ -15,6 +15,8 @@ Este projeto é um website fictício desenvolvido para N1 da disciplina Desenvol
 
 Os formulários de **Anamnese** coletam informações pessoais dos pacientes, contato de emergência, e questões importantes relacionadas ao histórico de tratamentos estéticos e possíveis alergias. A página foi desenvolvida com foco em **usabilidade** e **responsividade**, garantindo que funcione em dispositivos móveis, tablets e desktops.
 
+Aviso: Não temos direitos sobre as imagens utilizadas.
+
 ## Funcionalidades
 
 - Formulário dividido em quatro seções:
