@@ -9,7 +9,7 @@ Este projeto é um website fictício desenvolvido para N1 da disciplina Desenvol
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Integrantes do Grupo](#integrantes-grupo)
+- [Integrantes do Grupo](#integrantes-do-grupo)
 
 ## Descrição
 
@@ -24,7 +24,10 @@ Aviso: Não temos direitos sobre as imagens utilizadas.
   - **Contato de Emergência**: Nome e telefone de uma pessoa de contato.
   - **Questionário**: Perguntas sobre tratamentos anteriores e alergias.
   - **Termo de Responsabilidade**: Consentimento do paciente com data e assinatura.
+
 - Validação de campos obrigatórios.
+- Integração com banco de dados para armazenamento seguro das informações.
+- Mensagens de feedback após o envio do formulário.
 - Design responsivo que se adapta a diferentes tamanhos de tela.
 
 ## Instalação
@@ -39,31 +42,40 @@ Para rodar o projeto localmente, siga as instruções abaixo:
     ```bash
     cd fada-dos-cilios
     ```
-
-3. Abra o arquivo `index.html` no seu navegador preferido.
+3. Configure o banco de dados.
+4. Execute o servidor PHP:
+    ```bash
+    php -S localhost:8000
+    ```
+5. Abra o navegador e acesse `http://localhost:8000`.
 
 ## Uso
 
 ### Página Inicial (Home)
+
 A página inicial apresenta a **Fada dos Cílios** com informações básicas sobre procedimentos estéticos e contato.
 
 ### Páginas de Extensão de Cílios, Harmonização Orofacial e Hidrolipoclasia Não Aspirativa 
-As páginas de formulário podem ser acessadas via o menu de navegação e permite ao paciente preencher e submeter suas informações para o início do tratamento estético.
+
+As páginas de formulário podem ser acessadas via o menu de navegação. Os pacientes podem preencher e submeter suas informações para o início do tratamento estético.
 
 ### Exemplo de uso do formulário:
+
 - Paciente preenche as informações pessoais.
 - Fornece o contato de emergência.
 - Responde ao questionário sobre tratamentos estéticos e alergias.
 - Concorda com o termo de responsabilidade e submete o formulário.
 
-
 ## Tecnologias Utilizadas
 
 - **HTML5**: Marcações semânticas.
 - **CSS3**: Estilização da página, com variáveis CSS e Flexbox.
+- **PHP**: Processamento de formulários e integração com banco de dados.
+- **MySQL**: Armazenamento de informações do paciente.
 - **Responsividade**: Adaptado para diferentes tamanhos de dispositivos, com Media Queries.
 
 ## Integrantes do Grupo
+
 - **Emelly Sales** - 2050671
 - **Lucas Mota** - 1898181
 - **Wallace Oliveira** - 2031549
